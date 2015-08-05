@@ -1,0 +1,749 @@
+
+/* 
+-----------------------------------------------------
+  Stylesheet Guide
+-----------------------------------------------------
+  
+  1. Default stylesheets
+    1.1. Color Schemes
+    1.2. Fonts
+  2. General classes
+  3. Main
+    3.1 Page tilte end breadcrumps
+    3.2 Offsets
+  4. Header
+    4.1. Header List
+    4.2. Enter Box
+  5. Nav
+    5.1. Main navigation
+      5.1.1. Sub Menu
+    5.2. Searchform
+  7. Basic Elements
+    7.1. Typography
+    7.2. Lists
+    7.3. Buttons
+    7.4. Banners
+    7.5. Dividers
+    7.6. Tooltips
+    7.7. Forms
+    7.8. Tables
+  8. Widgets and Shortcodes
+    8.1. Accordion and Toggles
+    8.2. Tabs and Tour Sections
+    8.3. Turn Box
+  9. Carousels
+  11. Posts
+  16. Comments
+  22. Footer
+    22.1. Footer Top
+    22.2. Footer Middle
+    22.3. Footer Bottom
+=======
+*/
+@import "reset.css";
+@import "../fonts/PFDindisplayproRegMedLight/font.css";
+@import "../fonts/PFDindisplayproThinBold/font.css";
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600&subset=latin,cyrillic);
+
+/* ------------------------------------------------
+
+    1. Default stylesheets
+
+------------------------------------------------ */
+
+   body {
+    font-family: 'Open Sans', sans-serif;
+    color:#757778;
+    font-size:15px;
+    line-height:24px;
+    background:#f7f7f7;
+   }
+
+   ::selection{
+    color: #fff;
+    background: #b2d231;
+   }
+
+   ::-moz-selection{
+    color: #fff;
+    background: #b2d231;
+   }
+
+   ::-moz-selection{background: #b2d231;color: #fff;}
+
+   ::-webkit-scrollbar{
+    background: #cdcdcd;  
+    width: 10px;
+   }
+
+   ::-webkit-scrollbar-thumb{background: #b2d231;}
+
+
+   ::-webkit-input-placeholder{
+    color:#505050;
+
+    -webkit-transition: text-indent .5s ease, color .5s ease;
+        transition: text-indent .5s ease, color .5s ease;
+   }
+
+   input::-moz-placeholder{
+    color:#505050;
+    opacity:1;
+   }
+
+   textarea::-moz-placeholder{
+    color: #505050;
+    opacity: 1;
+   }
+
+   ::ms-input-placeholder{
+    color:#505050;
+   }
+
+   [placeholder]:focus::-webkit-input-placeholder{
+    text-indent:10em;
+    color:transparent;
+   }
+
+   *{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+   }
+
+
+  /* --------------------------------------------
+        1.1. Color Schemes
+  -------------------------------------------- */
+    
+
+  /* --------------------------------------------
+        1.2. Fonts
+  -------------------------------------------- */
+    
+    .PFDlight{font-family: 'pf_dindisplay_prolight';}
+    .PFDregular{font-family: 'pf_dindisplay_proregular';}
+    .PFDmedium{font-family: 'pf_dindisplay_promedium';}
+    .PFDthin{font-family: 'pf_dindisplay_prothin';}
+
+    .regular{font-weight: 400;}
+    .semibold{font-weight: 600;}
+
+/* ------------------------------------------------
+
+    2. General Classes
+
+------------------------------------------------ */
+
+    .align_left{
+    text-align: left;
+    }
+
+    .align_right{
+    text-align: right;
+    }
+
+    .align_center{
+    text-align: center;
+    }
+
+    .alignleft{
+    float: left;
+    }
+
+    .alignright{
+    float: right;
+    }
+
+    .wrapper{overflow: hidden;}
+
+    .hide{ display: none;}
+
+    .show{ display: block;}
+
+    .d_ib{display: inline-block;}
+
+    .transparent{ opacity:0; }
+
+    .invisible{ 
+    opacity: 0;
+    visibility: hidden;
+    }
+
+    .visible{ 
+    opacity:1; 
+    visibility: visible;
+    }
+
+    .p_abs{position: absolute;}
+
+    .p_rel{position: relative;}
+
+    .p_fix{position: fixed;}
+
+    .clear {clear:both;width:100%;line-height:0;font-size:0;}
+
+    .clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    }
+
+    .reg {text-transform:uppercase}
+
+    .image_box img{max-width: 100%;}
+    .image_box.alignleft{margin: 0 20px 20px 0;}
+    .image_box.alignright{margin: 0  20px 20px;}
+
+/* ------------------------------------------------
+
+    3. Main
+
+------------------------------------------------ */
+  
+  .container{
+    width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+  }
+
+  #content {padding:15px 0px 0px 0px;}
+
+  .left_part{
+    
+  }
+
+  .sidebar{
+    
+  }
+
+
+  #go_up{
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+    border-radius: 5px;
+    background-color: rgba(191,191,191,0.6);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+
+
+  #go_up.active{
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+
+  #go_up:hover{
+    color: #fff;
+    background-color: #b2d231;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+
+
+  .section_offset{
+     padding: 0 0 30px;
+  }
+
+/* ------------------------------------------------
+
+    4. Header
+
+------------------------------------------------ */
+   
+  #header{
+   
+  }
+
+  .logo{}
+  
+  .logo a{}
+
+
+  /* --------------------------------------------
+        4.1. Languages Dropdown
+  -------------------------------------------- */
+    
+
+  /* --------------------------------------------
+        4.2. Enter Box
+  -------------------------------------------- */
+
+    .enter_box span{
+      display: block;
+      float: left;
+      font-size: 14px;
+      line-height: 17px;
+      padding: 21px 10px 23px;
+      font-weight: 400;
+      color: #454141;
+    }
+    .enter_box span strong{font-weight: 600;}
+
+    .enter_box a{
+      display: block;
+      float: left;
+      font-size: 14px;
+      line-height: 17px;
+      padding: 21px 10px 23px;
+      font-weight: 400;
+      border-right: 1px solid #e8e8e8;
+      border-left: 1px solid #e8e8e8;
+      color: #454141;
+    }
+    .enter_box a:hover{
+      background-color: #f0f0f0;
+    }
+
+/* ------------------------------------------------
+
+    5. Nav
+
+------------------------------------------------ */
+
+  .nav_wrap{
+    position: relative;
+    z-index: 99;
+    background-color: #232629;
+    display: table;
+    width: 100%;
+  }
+  
+  /* --------------------------------------------
+      5.1. Main Navigation
+  -------------------------------------------- */
+    
+    nav{
+      display: table-cell;
+    }
+
+    .main_menu>li{
+      float: left;
+      position: relative;
+    }
+
+    .main_menu>li>a{
+      display: block;
+      font: 16px/18px 'pf_dindisplay_probold';
+      text-transform: uppercase;
+      color: #fff;
+      padding: 22px 20px;
+      background-color: #242222;
+    }
+
+    
+
+    .main_menu>li:hover>a,
+    .main_menu>li.active>a{
+      background-color: #333030;
+    }
+
+    .main_menu>li.current>a,
+    .main_menu>li>a:active{
+      background-color: #43474d;
+    }
+
+    .main_menu>li:hover>a:after,
+    .main_menu>li.current>a:after{display: none;}
+
+
+  /* --------------------------------------------
+      5.2. Sub Menu
+  -------------------------------------------- */
+
+    .sub_menu{
+      width: 232px;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      border-bottom: 5px solid #ff1616;
+      display: none;
+    }
+
+    .sub_menu>li>a{
+      display: block;
+      font-size: 16px;
+      line-height: 19px;
+      color: #fff;
+      padding: 20px 0 18px 20px;
+      border-top: 1px solid #0d0c0c;
+      background-color: #232629;
+      position: relative;
+    }
+    
+    .sub_menu>li>a:after{
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: #333030;
+    }
+
+    .sub_menu>li>a:hover:after,
+    .sub_menu>li>a:active:after{display: none;}
+
+    .sub_menu>li>a:hover{background-color: #333030;}
+
+    .sub_menu>li>a:active{background-color: #ff1616;}
+
+
+  /* --------------------------------------------
+      5.3. Additional Menu
+  -------------------------------------------- */
+
+    .additional_menu_box{
+      background-color: #232629;
+      position: relative;
+    }
+
+    .additional_menu_box button{
+      display: block;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      background: none;
+      font: 16px/18px 'pf_dindisplay_probold';
+      text-transform: uppercase;
+      color: #fff;
+      padding: 22px 20px;
+      background-color: #242222;
+    }
+
+    .additional_menu_box button:before{
+      content: "";
+      display: block;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 22px;
+      left: 18px;
+      background: url(../images/icon.png) 0 0 no-repeat;
+    }
+
+    .additional_menu_box button:hover:before,
+    .additional_menu_box button.active:before{
+      background-position: 0 -23px;
+    }
+
+    .additional_menu{
+      width: 232px;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      border-bottom: 5px solid #ff1616;
+      display: none;
+    }
+
+    .additional_menu>li{position: relative;}
+
+    .additional_menu.active{
+      display: block;
+    }
+
+    .additional_menu>li>a{
+      display: block;
+      font-size: 16px;
+      line-height: 19px;
+      color: #fff;
+      padding: 20px 0 18px 20px;
+      border-top: 1px solid #0d0c0c;
+      background-color: #242222;
+      position: relative;
+    }
+    
+    .additional_menu>li>a:after{
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: #333030;
+    }
+
+    .additional_menu>li>a:hover:after,
+    .additional_menu>li>a:active:after{display: none;}
+
+    .additional_menu>li>a:hover{background-color: #333030;}
+    .additional_menu>li>a:active{background-color: #ff1616;}
+
+    .additional_menu .sub_menu{
+      top: 0;
+      right: 100%;
+      left: auto;
+    }
+    
+
+  /* --------------------------------------------
+      5.2. Searchform
+  -------------------------------------------- */
+    
+    .search_box{
+      display: table-cell;
+    }
+    
+    .search_form{
+      display: block;
+      position: relative;
+      height: 62px;
+    }
+
+    .search_form input[type="text"]{
+      display: block;
+      outline: none;
+      background: #333030;
+      border: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      padding: 21px 55px 21px 12px;
+      color: #a6a1a1;
+      font-size: 16px;
+      line-height: 20px;
+      -webkit-transition: width 0.5s;
+      -o-transition: width 0.5s;
+      transition: width 0.5s;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+
+    .search_form input[type="text"]:focus{
+      border-left: 4px solid #b3adad;
+      color: #f1f1f1;
+      width: 425px;
+      -webkit-transition: width 0.5s;
+      -o-transition: width 0.5s;
+      transition: width 0.5s;
+    }
+    .search_form button{
+      display: block;
+      position: absolute;
+      outline: none;
+      border: none;
+      width: 55px;
+      height: 62px;
+      top: 0;
+      right: 0;
+      background: none;
+      cursor: pointer;
+    }
+
+    .search_form  button:hover{opacity: 0.7;}
+
+    .search_form button:before{
+      content: "";
+      display: block;
+      position: absolute;
+      top: 17px;
+      left: 6px;
+      width: 30px;
+      height: 30px;
+      background: url(../images/icon.png) -2px -50px no-repeat;
+    }
+
+    .search_form input[type="text"]:focus ~ button:before{
+      background-position: -2px -84px;
+    }
+
+
+
+/* ------------------------------------------------
+
+    7. Basic Elements
+
+------------------------------------------------ */
+   /* --------------------------------------------
+        7.1. Typography
+   -------------------------------------------- */
+  
+      h1,h2,h3,h4,h5,h6{
+         font-weight:normal;
+         line-height: 1;
+         color: #43474d;
+         margin: 0;
+         margin-bottom: 17px;
+         position: relative;
+      }
+
+      h1{font-size: 38px;}
+
+      h2{
+        font-family: 'pf_dindisplay_promedium';
+        font-size: 24px;
+        line-height: 34px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+
+      h3{
+        font-family: 'pf_dindisplay_proregular';
+        font-size: 19px;
+        line-height: 39px;
+        padding: 7px 0;
+        text-transform: uppercase;
+        margin-bottom: 0;
+
+      }
+
+      h4{
+        font-family: 'pf_dindisplay_prolight';
+        font-size: 22px;
+        line-height: 25px;
+        padding: 10px 0;
+        margin-bottom: 0;
+      }
+
+      h5{font-size: 16px;}
+
+      h6{font-size: 14px;}
+
+      p:not(:last-child){margin-bottom: 15px;}
+
+      mark{background-color: #20cfef;padding: 0 2px;color: #fff;}
+      mark.red{background-color: #ee352f;}
+
+      a{
+         color: #454242;
+         text-decoration: none;
+         -webkit-transition: all 0.5s;
+         -o-transition: all 0.5s;
+         transition: all 0.5s;
+      }
+      a:hover{
+         color: #9bb82a;
+         text-decoration: none;
+         -webkit-transition: all 0.3s;
+         -o-transition: all 0.3s;
+         transition: all 0.3s;
+      }
+      a:focus,
+      a:visited{
+         text-decoration: none;
+      }
+
+      .link_accent{
+        color: #9bb82a;
+      }
+      .link_accent:hover{
+        color: #232629;
+      }
+
+      a.icon:hover{opacity: 0.7;}
+
+   /* --------------------------------------------
+        7.2. Lists
+   -------------------------------------------- */
+
+      
+
+  /* --------------------------------------------
+        7.3. Buttons
+  -------------------------------------------- */
+    
+    
+
+
+  /* --------------------------------------------
+        7.4. Banners
+  -------------------------------------------- */
+    
+    .banner{
+      background-color: #f1f1f1;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+  /* --------------------------------------------
+        7.5. Dividers
+  -------------------------------------------- */
+    
+    
+
+  /* --------------------------------------------
+        7.6. Tooltips
+  -------------------------------------------- */
+
+    
+
+  /* --------------------------------------------
+        7.7. Forms
+  -------------------------------------------- */
+    
+    
+  
+  /* --------------------------------------------
+        7.8. Tables
+  -------------------------------------------- */
+
+    
+    
+
+/* ------------------------------------------------
+
+    8. Widgets and Shortcodes
+
+------------------------------------------------ */
+
+
+  /* --------------------------------------------
+        8.1. Accordion and Toggles
+  -------------------------------------------- */
+    
+
+  /* --------------------------------------------
+        8.2. Tabs and Tour Sections
+  -------------------------------------------- */
+    
+    
+
+
+  /* --------------------------------------------
+        8.3. Turn Box
+  -------------------------------------------- */
+ 
+/* ------------------------------------------------
+
+    9. Carousels
+
+------------------------------------------------ */
+
+/* ------------------------------------------------
+
+    11. Posts
+
+------------------------------------------------ */
+
+  
+/* ------------------------------------------------
+
+    16. Comments
+
+------------------------------------------------ */
+  
+/* ------------------------------------------------
+
+    22. Footer
+
+------------------------------------------------ */
