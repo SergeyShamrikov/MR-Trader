@@ -10,6 +10,7 @@
 
 			self.dropdown();
 			self.responsiveHorizontalNavigation.init();
+			self.backToTopBtn();
 
 		},
 
@@ -49,6 +50,18 @@
 
 		    });
 
+		    $(document).on("click",function(){
+
+		    	$(document).click(function(event) {
+
+					if ($(event.target).closest(".languages_dropdown").length) return;
+					$(".languages_dropdown").removeClass('active');
+					event.stopPropagation();
+
+				});
+
+		    });
+
 		},
 
 
@@ -66,20 +79,66 @@
 				self.w = $(window);
 				self.d = $(document);
 				self.mButton = $('.toggle_menu_btn');
+				self.aButton = $('.additional_btn');
 				self.isStickyInit = $('.sticky_part');
+
+				self.checkWidthMenu();
 
 				if(Core.ISTOUCH || self.w.width() < 768){																
 					
 					self.checkViewPort();
-
-					self.w.on('resize.responsiveNav', function(){
-
-						self.checkViewPort();
-
-					});
 				
 				};
 
+				self.w.on('resize.responsiveNav', function(){
+
+					if(Core.ISTOUCH || self.w.width() < 768){
+
+						self.checkViewPort();
+						
+					}
+
+				});
+
+			},
+
+			checkWidthMenu : function(){
+
+				var self = this,
+					fullWidh = 0,
+					navWrap = $('.nav_wrap').width();
+
+				$(".navigation>li").each(function(){
+
+					fullWidh += $(this).width();
+
+				});
+
+				if(fullWidh > (navWrap-405) && self.w.width() > 767){
+
+
+					if(!self.aButton.length){
+
+						self.generateList();
+
+					}
+
+					setTimeout(function(){
+
+						self.additionalMenu();
+					
+					},100);
+				}
+
+				else if(self.w.width() < 768){
+
+					$('.additional_menu>li').each(function(){
+
+						$(this).appendTo(".navigation");
+
+					});
+
+				}
 
 			},
 
@@ -88,17 +147,36 @@
 				var self = this;
 
 				self.mList = $('<div></div>', {
-					html: '<button>Other</button><ul class="additional_menu"></ul>',
+					html: '<button class="additional_btn">Other <i class="fa fa-angle-down"></i></button><ul class="additional_menu"></ul>',
 				class: 'additional_menu_box'
 				}).insertAfter(self.nav);
+
+				$('.additional_btn').on('click', function(){
+
+					var $this = $(this);
+
+					$this.toggleClass('active');
+
+					$this.parent('.additional_menu_box').toggleClass('active');
+
+				});
+
+				self.d.click(function(event) {
+
+					if ($(event.target).closest(".additional_menu_box").length) return;
+					$(".additional_menu_box").removeClass('active');
+					$(".additional_btn").removeClass('active');
+					event.stopPropagation();
+
+				});
 
 			},
 
 			additionalMenu : function(){
 
-				var maxWidth = $('.navWrap').width()-303,
+				var maxWidth = $('.nav_wrap').width()-303,
 					itemWidth = 0,
-					additionalBtn = $('.additional_menu_box>').width();
+					additionalBtn = $('.additional_btn').width();
 
 				$('.additional_menu>li').each(function(){
 
@@ -106,11 +184,11 @@
 
 				});
 
-				$(".main_menu>li").each(function(){
+				$(".navigation>li").each(function(){
 
 					var $this = $(this);
 
-					itemWidth += $(this).width();
+					itemWidth += $this.width();
 
 					if(itemWidth > maxWidth){
 
@@ -135,10 +213,15 @@
 				}
 				// mobile
 				else if(self.w.width() < 768){
+
 					self.initMobileEvents();
+
 					if(!self.mButton.length){
+
 						self.generateBtn();
+
 					}
+
 				}
 
 			},
@@ -288,14 +371,52 @@
 
 
 		/**
-		**	Main menu
+		**	Back to top
 		**/
 
-		mainMenu : function(){
+		backToTopBtn: function(config){
 
+			config = $.extend({
+				offset: 350,
+				transitionIn: 'bounceInRight',
+				transitionOut: 'bounceOutRight'
+			}, config);
 
-		}
+			var btn = $('<button></button>', {
+				class: 'back_to_top icon_only rd-grey animated hide',
+				html: '<i class="fa fa-angle-up"></i>'
+			}).appendTo($('body')),
 
+			$wd = $(window),
+			$html = $('html'),
+			$body = $('body');
+
+			$wd.on('scroll.back_to_top', function(){
+
+				if($wd.scrollTop() > config.offset){
+
+					btn.removeClass('hide '+config.transitionOut).addClass(config.transitionIn);
+
+				}
+				else{
+
+					btn.removeClass(config.transitionIn).addClass(config.transitionOut);
+
+				}
+
+			});
+
+			btn.on('click', function(){
+
+				$html.add($body).animate({
+
+					scrollTop: 0
+
+				});
+
+			});
+
+	   	}
 
 
 	}

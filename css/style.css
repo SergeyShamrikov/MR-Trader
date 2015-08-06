@@ -41,6 +41,7 @@
 =======
 */
 @import "reset.css";
+@import "animate.css";
 @import "../font-awesome-4.4.0/css/font-awesome.min.css";
 @import "../fonts/PFDindisplayproRegMedLight/font.css";
 @import "../fonts/PFDindisplayproThinBold/font.css";
@@ -223,37 +224,28 @@
   }
 
 
-  #go_up{
-    position: fixed;
-    bottom: 30px;
-    right: 20px;
-    width: 52px;
-    height: 52px;
-    border-radius: 5px;
-    background-color: rgba(191,191,191,0.6);
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-  }
-
-
-  #go_up.active{
-    opacity: 1;
-    visibility: visible;
-    -webkit-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-  }
-
-  #go_up:hover{
-    color: #fff;
+  .back_to_top{
+    border: none;
     background-color: #b2d231;
-    -webkit-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+    opacity: 0.6;
+  }
+
+  .back_to_top:hover{
+    opacity: 1;
+  }
+
+  .back_to_top i{
+    font-size: 30px;
+    line-height: 60px;
+    margin: 0;
   }
 
 
@@ -277,8 +269,33 @@
   }
   
   .logo a{
-    font-size: 0;
+    display: block;
+    width: 264px;
+    height: 66px;
+    background: url(../images/logo.png) 0 0 no-repeat;
+    padding: 40px 0 0 70px;
   }
+
+  .logo_text{
+    font: 14px/16px 'pf_dindisplay_proregular';
+    color: #a7a9ab;
+    float: left;
+  }
+
+  .logo a ul{
+    float: right;
+    padding-top: 6px;
+  }
+
+  .logo a ul li{
+    float: left;
+    width: 7px;
+    height: 7px;
+    background-color: #a7a9ab;
+    margin-left: 3px;
+  }
+
+  .logo a ul li:first-child{margin-left: 0;}
 
 
   /* --------------------------------------------
@@ -420,6 +437,8 @@
       float: left;
     }
 
+    .has_submenu{position: relative;}
+
     .navigation>li>a{
       display: block;
       font-size: 16px;
@@ -451,7 +470,7 @@
       z-index: 9;
       visibility: hidden;
       background-color: #43474d;
-      padding: 15px 15px 28px;
+      padding: 15px 0 28px;
       font: 16px/20px 'pf_dindisplay_proregular';
       -webkit-transform: translate(0, 20px);
             -ms-transform: translate(0, 20px);
@@ -460,6 +479,18 @@
       -webkit-transition: all 0.4s;
         -o-transition: all 0.4s;
         transition: all 0.4s;
+    }
+
+    .submenu .submenu{
+      top: 0;
+      left: 100%;
+    }
+
+
+    .additional_menu .submenu{
+      top: 0;
+      left: auto;
+      right: 100%;
     }
 
     .md_touch .t_active > .submenu,
@@ -473,7 +504,7 @@
     }
     
     .submenu>li{
-      border-bottom: 1px solid #595e66;
+      padding: 0 15px;
     }
 
     .submenu>li>a{
@@ -481,9 +512,11 @@
       color: #fff;
       padding: 16px 0 16px 15px;
       position: relative;
+      border-bottom: 1px solid #595e66;
     }
 
     .submenu>li>a:hover,
+    .submenu>li.t_active > a,
     .submenu>li.current>a{
       background-color: #595e66;
     }
@@ -494,11 +527,11 @@
   -------------------------------------------- */
 
     .additional_menu_box{
-      background-color: #232629;
       position: relative;
+      float: left;
     }
 
-    .additional_menu_box button{
+    .additional_btn{
       display: block;
       outline: none;
       border: none;
@@ -508,73 +541,60 @@
       text-transform: uppercase;
       color: #fff;
       padding: 22px 20px;
-      background-color: #242222;
     }
 
-    .additional_menu_box button:before{
-      content: "";
-      display: block;
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      top: 22px;
-      left: 18px;
-      background: url(../images/icon.png) 0 0 no-repeat;
-    }
-
-    .additional_menu_box button:hover:before,
-    .additional_menu_box button.active:before{
-      background-position: 0 -23px;
+    .additional_btn:hover,
+    .additional_btn.active{
+      background-color: #43474d;
     }
 
     .additional_menu{
-      width: 232px;
+      width: 255px;
       position: absolute;
       top: 100%;
-      left: 0;
-      border-bottom: 5px solid #ff1616;
-      display: none;
+      right: 0;
+      opacity: 0;
+      z-index: 9;
+      visibility: hidden;
+      background-color: #43474d;
+      padding: 15px 0 28px;
+      font: 16px/20px 'pf_dindisplay_proregular';
+      -webkit-transform: translate(0, 20px);
+            -ms-transform: translate(0, 20px);
+             -o-transform: translate(0, 20px);
+                transform: translate(0, 20px);
+      -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
     }
 
-    .additional_menu>li{position: relative;}
+    .additional_menu_box.active .additional_menu{
+      opacity: 1;
+      visibility: visible;
+       -webkit-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+           -o-transform: translate(0, 0);
+              transform: translate(0, 0);
+    }
 
-    .additional_menu.active{
-      display: block;
+    .additional_menu>li{
+      padding: 0 15px;
     }
 
     .additional_menu>li>a{
       display: block;
-      font-size: 16px;
-      line-height: 19px;
       color: #fff;
-      padding: 20px 0 18px 20px;
-      border-top: 1px solid #0d0c0c;
-      background-color: #242222;
+      padding: 16px 0 16px 15px;
       position: relative;
-    }
-    
-    .additional_menu>li>a:after{
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background-color: #333030;
+      border-bottom: 1px solid #595e66;
     }
 
-    .additional_menu>li>a:hover:after,
-    .additional_menu>li>a:active:after{display: none;}
-
-    .additional_menu>li>a:hover{background-color: #333030;}
-    .additional_menu>li>a:active{background-color: #ff1616;}
-
-    .additional_menu .submenu{
-      top: 0;
-      right: 100%;
-      left: auto;
+    .additional_menu>li>a:hover,
+    .additional_menu>li.t_active > a,
+    .additional_menu>li.current>a{
+      background-color: #595e66;
     }
+
     
 
   /* --------------------------------------------
@@ -582,26 +602,23 @@
   -------------------------------------------- */
     
     .search_box{
-      display: table-cell;
+      overflow: hidden;
     }
     
     .search_form{
-      display: block;
       position: relative;
-      height: 62px;
+      width: 100%;
     }
 
     .search_form input[type="text"]{
       display: block;
       outline: none;
-      background: #333030;
+      background: #37393b;
       border: none;
-      position: absolute;
-      top: 0;
-      right: 0;
       width: 100%;
+      border-left: 4px solid #43474d;
       padding: 21px 55px 21px 12px;
-      color: #a6a1a1;
+      color: #a7a9ab;
       font-size: 16px;
       line-height: 20px;
       -webkit-transition: width 0.5s;
@@ -614,12 +631,8 @@
 
 
     .search_form input[type="text"]:focus{
-      border-left: 4px solid #b3adad;
+      font-size: 16px;
       color: #f1f1f1;
-      width: 425px;
-      -webkit-transition: width 0.5s;
-      -o-transition: width 0.5s;
-      transition: width 0.5s;
     }
     .search_form button{
       display: block;
@@ -632,23 +645,23 @@
       right: 0;
       background: none;
       cursor: pointer;
+      text-align: center;
+      color: #a7a9ab;
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
     }
-
-    .search_form  button:hover{opacity: 0.7;}
 
     .search_form button:before{
-      content: "";
-      display: block;
-      position: absolute;
-      top: 17px;
-      left: 6px;
-      width: 30px;
-      height: 30px;
-      background: url(../images/icon.png) -2px -50px no-repeat;
+      content: "\f002";
+      font: normal normal normal 20px/62px FontAwesome;
     }
 
-    .search_form input[type="text"]:focus ~ button:before{
-      background-position: -2px -84px;
+    .search_form  button:hover{
+      opacity: 0.7;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
     }
 
 
