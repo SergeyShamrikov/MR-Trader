@@ -41,6 +41,7 @@
 =======
 */
 @import "reset.css";
+@import "../font-awesome-4.4.0/css/font-awesome.min.css";
 @import "../fonts/PFDindisplayproRegMedLight/font.css";
 @import "../fonts/PFDindisplayproThinBold/font.css";
 
@@ -267,12 +268,17 @@
 ------------------------------------------------ */
    
   #header{
-   
+    background-color: #232629;
+    margin-bottom: 15px;
   }
 
-  .logo{}
+  .logo{
+    padding-top: 2px;
+  }
   
-  .logo a{}
+  .logo a{
+    font-size: 0;
+  }
 
 
   /* --------------------------------------------
@@ -284,30 +290,109 @@
         4.2. Enter Box
   -------------------------------------------- */
 
-    .enter_box span{
+    .greeting{
       display: block;
       float: left;
-      font-size: 14px;
-      line-height: 17px;
-      padding: 21px 10px 23px;
+      font-size: 16px;
+      line-height: 20px;
+      padding: 26px 17px 26px 0;
       font-weight: 400;
-      color: #454141;
+      color: #f7f7f7;
     }
-    .enter_box span strong{font-weight: 600;}
 
-    .enter_box a{
+    .enter{
       display: block;
       float: left;
-      font-size: 14px;
-      line-height: 17px;
-      padding: 21px 10px 23px;
+      font-size: 16px;
+      line-height: 20px;
+      padding: 26px 16px 26px;
       font-weight: 400;
-      border-right: 1px solid #e8e8e8;
-      border-left: 1px solid #e8e8e8;
-      color: #454141;
+      border-right: 1px solid #404245;
+      border-left: 1px solid #404245;
+      color: #f7f7f7;
+      background-color: #37393b;
+      margin-right: 2px;
     }
-    .enter_box a:hover{
-      background-color: #f0f0f0;
+    .enter:hover{
+      background-color: #404245;
+      color: #fff;
+    }
+
+    .languages_dropdown{
+      position: relative;
+      background-color: #37393b;
+      border-right: 1px solid #404245;
+      border-left: 1px solid #404245;
+    }
+
+    .languages_dropdown.active{
+      background-color: #404245;
+    }
+
+    .languages_dropdown a{
+      display: block;
+      position: relative;
+      font-size: 16px;
+      line-height: 20px;
+      padding: 26px 16px 26px;
+      font-weight: 400;
+      color: #f7f7f7;
+    }
+
+    .languages_dropdown>a i{
+      margin-top: 2px;
+    }
+
+    .languages_dropdown a img{
+      margin: 4px 7px 0 0;
+    }
+
+    .languages_dropdown a:hover{
+      color: #fff;
+      background-color: #404245;
+    }
+
+    .languages_dropdown>ul{
+      background-color: #404245;
+      position: absolute;
+      top: 100%;
+      left: -1px;
+      right: -1px;
+      z-index: 999;
+      border-top: 1px solid #232629;
+      opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translateY(30px);
+      -ms-transform: translateY(30px);
+      -o-transform: translateY(30px);
+      transform: translateY(30px);
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+
+    .languages_dropdown>ul li{
+      border-bottom: 1px solid #232629;
+    }
+    
+    .languages_dropdown>ul li a{
+      padding: 15px 16px 14px;
+    }
+
+    .languages_dropdown>ul li a:hover{
+      background-color: #4e5154;
+    }
+
+    .languages_dropdown.active>ul{
+      opacity: 1;
+      visibility: visible;
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0);
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
     }
 
 /* ------------------------------------------------
@@ -318,91 +403,90 @@
 
   .nav_wrap{
     position: relative;
-    z-index: 99;
+    border-radius: 3px;
     background-color: #232629;
-    display: table;
-    width: 100%;
+    margin-top: 15px;
   }
   
   /* --------------------------------------------
       5.1. Main Navigation
   -------------------------------------------- */
-    
     nav{
-      display: table-cell;
+      font-family: 'pf_dindisplay_probold';
     }
 
-    .main_menu>li{
-      float: left;
+    .navigation>li{
       position: relative;
+      float: left;
     }
 
-    .main_menu>li>a{
+    .navigation>li>a{
       display: block;
-      font: 16px/18px 'pf_dindisplay_probold';
+      font-size: 16px;
+      line-height: 20px;
+      padding: 21px;
       text-transform: uppercase;
       color: #fff;
-      padding: 22px 20px;
-      background-color: #242222;
     }
 
-    
-
-    .main_menu>li:hover>a,
-    .main_menu>li.active>a{
-      background-color: #333030;
+    .navigation>li:first-child>a{
+      border-radius: 3px 0 0 3px;
     }
 
-    .main_menu>li.current>a,
-    .main_menu>li>a:active{
+    .navigation>li:hover>a,
+    .navigation>li.current>a{
       background-color: #43474d;
     }
-
-    .main_menu>li:hover>a:after,
-    .main_menu>li.current>a:after{display: none;}
-
 
   /* --------------------------------------------
       5.2. Sub Menu
   -------------------------------------------- */
 
-    .sub_menu{
-      width: 232px;
+    .submenu{
+      width: 255px;
       position: absolute;
       top: 100%;
       left: 0;
-      border-bottom: 5px solid #ff1616;
-      display: none;
+      opacity: 0;
+      z-index: 9;
+      visibility: hidden;
+      background-color: #43474d;
+      padding: 15px 15px 28px;
+      font: 16px/20px 'pf_dindisplay_proregular';
+      -webkit-transform: translate(0, 20px);
+            -ms-transform: translate(0, 20px);
+             -o-transform: translate(0, 20px);
+                transform: translate(0, 20px);
+      -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
     }
 
-    .sub_menu>li>a{
-      display: block;
-      font-size: 16px;
-      line-height: 19px;
-      color: #fff;
-      padding: 20px 0 18px 20px;
-      border-top: 1px solid #0d0c0c;
-      background-color: #232629;
-      position: relative;
+    .md_touch .t_active > .submenu,
+    .md_no-touch .has_submenu:hover > .submenu{
+      opacity: 1;
+      visibility: visible;
+       -webkit-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+           -o-transform: translate(0, 0);
+              transform: translate(0, 0);
     }
     
-    .sub_menu>li>a:after{
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background-color: #333030;
+    .submenu>li{
+      border-bottom: 1px solid #595e66;
     }
 
-    .sub_menu>li>a:hover:after,
-    .sub_menu>li>a:active:after{display: none;}
+    .submenu>li>a{
+      display: block;
+      color: #fff;
+      padding: 16px 0 16px 15px;
+      position: relative;
+    }
 
-    .sub_menu>li>a:hover{background-color: #333030;}
-
-    .sub_menu>li>a:active{background-color: #ff1616;}
+    .submenu>li>a:hover,
+    .submenu>li.current>a{
+      background-color: #595e66;
+    }
 
 
   /* --------------------------------------------
@@ -486,7 +570,7 @@
     .additional_menu>li>a:hover{background-color: #333030;}
     .additional_menu>li>a:active{background-color: #ff1616;}
 
-    .additional_menu .sub_menu{
+    .additional_menu .submenu{
       top: 0;
       right: 100%;
       left: auto;
