@@ -59,6 +59,7 @@
     color:#757778;
     font-size:15px;
     line-height:24px;
+    min-width: 1200px;
     background:#f7f7f7;
    }
 
@@ -119,6 +120,8 @@
         1.1. Color Schemes
   -------------------------------------------- */
     
+    .accent_color{color: #b2d231;}
+    .grey_color{color: #a7a9ab;}
 
   /* --------------------------------------------
         1.2. Fonts
@@ -213,14 +216,16 @@
     margin: 0 auto;
   }
 
-  #content {padding:15px 0px 0px 0px;}
+  #content {padding:15px 0px 50px 0px;}
 
   .left_part{
-    
+    width: 840px;
+    float: left;
   }
 
   .sidebar{
-    
+    width: 300px;
+    float: right; 
   }
 
 
@@ -235,6 +240,8 @@
     border-radius: 5px;
     text-align: center;
     color: #fff;
+    cursor: pointer;
+    outline: none;
     opacity: 0.6;
   }
 
@@ -302,6 +309,89 @@
         4.1. Languages Dropdown
   -------------------------------------------- */
     
+    .languages_dropdown{
+      position: relative;
+      background-color: #37393b;
+      border-right: 1px solid #404245;
+      border-left: 1px solid #404245;
+    }
+
+    .languages_dropdown.active{
+      background-color: #404245;
+    }
+
+    .languages_dropdown a{
+      display: block;
+      position: relative;
+      font-size: 16px;
+      line-height: 20px;
+      padding: 26px 16px 26px 42px;
+      font-weight: 400;
+      color: #f7f7f7;
+    }
+
+    .languages_dropdown>a i{
+      margin-top: 2px;
+    }
+
+    .languages_dropdown a img{
+      position: absolute;
+      top: 29px;
+      left: 16px;
+    }
+
+    .languages_dropdown a:hover{
+      color: #fff;
+      background-color: #404245;
+    }
+
+    .languages_dropdown>ul{
+      background-color: #404245;
+      position: absolute;
+      top: 100%;
+      left: -1px;
+      right: -1px;
+      z-index: 999;
+      border-top: 1px solid #232629;
+      opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translateY(30px);
+      -ms-transform: translateY(30px);
+      -o-transform: translateY(30px);
+      transform: translateY(30px);
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+
+    .languages_dropdown>ul li{
+      border-bottom: 1px solid #232629;
+    }
+    
+    .languages_dropdown>ul li a{
+      padding: 15px 16px 14px 42px;
+    }
+
+    .languages_dropdown>ul li a img{
+      top: 19px;
+    }
+
+    .languages_dropdown>ul li a:hover{
+      background-color: #4e5154;
+    }
+
+    .languages_dropdown.active>ul{
+      opacity: 1;
+      visibility: visible;
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0);
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+
 
   /* --------------------------------------------
         4.2. Enter Box
@@ -335,100 +425,35 @@
       color: #fff;
     }
 
-    .languages_dropdown{
-      position: relative;
-      background-color: #37393b;
-      border-right: 1px solid #404245;
-      border-left: 1px solid #404245;
-    }
-
-    .languages_dropdown.active{
-      background-color: #404245;
-    }
-
-    .languages_dropdown a{
-      display: block;
-      position: relative;
-      font-size: 16px;
-      line-height: 20px;
-      padding: 26px 16px 26px;
-      font-weight: 400;
-      color: #f7f7f7;
-    }
-
-    .languages_dropdown>a i{
-      margin-top: 2px;
-    }
-
-    .languages_dropdown a img{
-      margin: 4px 7px 0 0;
-    }
-
-    .languages_dropdown a:hover{
-      color: #fff;
-      background-color: #404245;
-    }
-
-    .languages_dropdown>ul{
-      background-color: #404245;
-      position: absolute;
-      top: 100%;
-      left: -1px;
-      right: -1px;
-      z-index: 999;
-      border-top: 1px solid #232629;
-      opacity: 0;
-      visibility: hidden;
-      -webkit-transform: translateY(30px);
-      -ms-transform: translateY(30px);
-      -o-transform: translateY(30px);
-      transform: translateY(30px);
-      -webkit-transition: all 0.5s;
-      -o-transition: all 0.5s;
-      transition: all 0.5s;
-    }
-
-    .languages_dropdown>ul li{
-      border-bottom: 1px solid #232629;
-    }
-    
-    .languages_dropdown>ul li a{
-      padding: 15px 16px 14px;
-    }
-
-    .languages_dropdown>ul li a:hover{
-      background-color: #4e5154;
-    }
-
-    .languages_dropdown.active>ul{
-      opacity: 1;
-      visibility: visible;
-      -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-      -o-transform: translateY(0);
-      transform: translateY(0);
-      -webkit-transition: all 0.3s;
-      -o-transition: all 0.3s;
-      transition: all 0.3s;
-    }
-
 /* ------------------------------------------------
 
     5. Nav
 
 ------------------------------------------------ */
+  
+
+  .sticky_part{
+    margin-top: 15px;
+    height: 62px;
+  }
 
   .nav_wrap{
     position: relative;
     border-radius: 3px;
     background-color: #232629;
-    margin-top: 15px;
+  }
+
+  .nav_wrap.fix_menu{
+    position: fixed;
+    top: 0;
+    z-index: 99;
   }
   
   /* --------------------------------------------
       5.1. Main Navigation
   -------------------------------------------- */
     nav{
+      float: left;
       font-family: 'pf_dindisplay_probold';
     }
 
@@ -443,7 +468,7 @@
       display: block;
       font-size: 16px;
       line-height: 20px;
-      padding: 21px;
+      padding: 21px 17px;
       text-transform: uppercase;
       color: #fff;
     }
@@ -456,6 +481,28 @@
     .navigation>li.current>a{
       background-color: #43474d;
     }
+    
+    .toggle_menu_btn{
+      width: 62px;
+      height: 62px;
+      text-align: center;
+      background-color: #232629;
+      color: #fff;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+
+    .toggle_menu_btn:hover{
+      color: #b2d231;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+
 
   /* --------------------------------------------
       5.2. Sub Menu
@@ -540,12 +587,20 @@
       font: 16px/18px 'pf_dindisplay_probold';
       text-transform: uppercase;
       color: #fff;
-      padding: 22px 20px;
+      padding: 22px 0;
+      width: 102px;
+      text-align: center;
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
     }
 
     .additional_btn:hover,
     .additional_btn.active{
       background-color: #43474d;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
     }
 
     .additional_menu{
@@ -671,6 +726,8 @@
     7. Basic Elements
 
 ------------------------------------------------ */
+
+
    /* --------------------------------------------
         7.1. Typography
    -------------------------------------------- */
@@ -687,9 +744,9 @@
       h1{font-size: 38px;}
 
       h2{
-        font-family: 'pf_dindisplay_promedium';
-        font-size: 24px;
-        line-height: 34px;
+        font-family: 'pf_dindisplay_probold';
+        font-size: 19px;
+        line-height: 24px;
         margin-bottom: 10px;
         text-transform: uppercase;
       }
@@ -705,11 +762,10 @@
       }
 
       h4{
-        font-family: 'pf_dindisplay_prolight';
-        font-size: 22px;
-        line-height: 25px;
-        padding: 10px 0;
-        margin-bottom: 0;
+        font-family: 'pf_dindisplay_proregular';
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 10px;
       }
 
       h5{font-size: 16px;}
@@ -753,12 +809,179 @@
         7.2. Lists
    -------------------------------------------- */
 
-      
+      .social_list1{
+        margin: 0 -2px; 
+      }
+
+      .social_list1.social_line{
+        margin: 0 0 0 10px;
+        padding-top: 0 !important;
+      }
+
+      .social_list1:not(:first-child){
+        padding-top: 10px;
+      }
+
+      .social_list1:not(:last-child){
+        margin-bottom: 20px;
+      }
+
+      .social_list1 li{
+        float: left;
+        width: 50%;
+        padding: 0 2px 4px;
+      }
+
+      .social_list1.social_line li{
+        width: 88px;
+        padding: 0;
+        margin-left: 8px;
+      }
+
+      .social_list1 li a{
+        display: block;
+        height: 52px;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 24px;
+        text-align: center;
+      }
+
+      .social_list1 li a i:before{
+        line-height: 52px;
+      }
+
+      .social_list1 li a.fb{background-color: #4076b3;}
+      .social_list1 li a.tw{background-color: #0ba4e6;}
+      .social_list1 li a.google{background-color: #da4a38;}
+      .social_list1 li a.in{background-color: #125688;}
+
+      .social_list1 li a:hover.fb{background-color: #2f619a;}
+      .social_list1 li a:hover.tw{background-color: #0a96d2;}
+      .social_list1 li a:hover.google{background-color: #bf3a2a;}
+      .social_list1 li a:hover.in{background-color: #0d3f63;}
+
+
+
+      .languages_list{
+        margin: 0 -5px;
+        position: relative;
+      }
+
+      .languages_list:before{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 1px;
+        height: 100%;
+        background-color: #e0e0e0;
+      }
+
+      .languages_list li{
+        float: left;
+        width: 50%;
+        padding: 0 5px;
+      }
+
+      .languages_list li a{
+        display: block;
+        position: relative;
+        font-size: 14px;
+        line-height: 19px;
+        padding: 15px 0 15px 25px;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .languages_list li a img{
+        position: absolute;
+        top: 19px;
+        left: 0;
+      }
+
+
+      .page_nav{
+        padding-left: 200px;
+      }
+
+      .page_nav:after{
+        content: "";
+        display: block;
+        clear: both;
+        height: 0;
+      }
+
+      .page_nav:not(:last-child){
+        margin-bottom: 30px;
+      }
+
+      .page_nav li{
+        float: left;
+        margin-right: 3px;
+      }
+
+      .page_nav li a{
+        display: block;
+        padding: 0 18px;
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 3px;
+        font-size: 18px;
+        line-height: 42px;
+        text-align: center;
+      }
+      .page_nav li.current a{
+        color: #fff;
+        background-color: #43474d;
+        border-color: #232629;
+        cursor: default;
+      }
 
   /* --------------------------------------------
         7.3. Buttons
   -------------------------------------------- */
     
+    .button{
+      display: inline-block;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      line-height: 24px;
+      color: #fff;
+      font-weight: 500;
+      padding: 11px 31px;
+      background-color: #43474d;
+      position: relative;
+      border-radius: 5px;
+    }
+
+    .button:before{
+      content: "";
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 50%;
+      left: 100%;
+      margin-top: -6px;
+      border: 6px solid transparent;
+      border-left-color: #43474d;
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+
+    .button:hover{
+      color: #fff;
+      background-color: #b2d231;
+    }
+    .button:hover:before{
+      border-left-color: #b2d231;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+    }
     
 
 
@@ -772,10 +995,33 @@
       text-align: center;
     }
 
+    .banner:not(:last-child){
+      margin-bottom: 15px;
+    }
+
+    .banner1:not(:last-child){
+      margin-bottom: 25px;
+    }
+
   /* --------------------------------------------
         7.5. Dividers
   -------------------------------------------- */
     
+    hr{
+      height: 1px;
+      border: none;
+      background-color: #e0e0e0;
+      margin: 0 0 10px;
+    }
+
+    .separator{
+      height: 4px;
+      border: none;
+      background: none;
+      border-top: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+      margin: 0 0 5px;
+    }
     
 
   /* --------------------------------------------
@@ -831,6 +1077,137 @@
     11. Posts
 
 ------------------------------------------------ */
+  
+  .post_nav{
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 30px;
+  }
+
+
+  .post_nav_list li{
+    float: left;
+  }
+
+  .post_nav_list li a{
+    display: block;
+    font: 18px/20px 'pf_dindisplay_proregular';
+    padding: 20px;
+    border-radius: 5px;
+    border-right: 1px solid #e0e0e0;
+    margin-right: -5px;
+    position: relative;
+  }
+
+  .post_nav_list li.current a{
+    background-color: #f1f1f1;
+    border-left: 1px solid #e0e0e0;
+    color: #43474d;
+    z-index: 9;
+  }
+
+  .post_nav_list li.current:first-child a{
+    border-left: none;
+  }
+
+  .post_nav time{
+    display: block;
+    float: right;
+    font: 14px/20px 'pf_dindisplay_promedium';
+    color: #5c5d5e;
+    padding: 20px 20px 20px 0;
+  }
+
+
+  .post_block:not(:last-child){
+    margin-bottom: 30px;
+  }
+
+  .post_block:after{
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+  }
+
+  .post_right_part{
+    width: 640px;
+    float: right;
+  }
+
+  .post_left_part{
+    width: 174px;
+    float: left;
+  }
+
+  .time_type1{
+    font: 18px/21px 'pf_dindisplay_proregular';
+    color: #fff;
+    display: block;
+    padding: 22px 0;
+    text-align: center;
+    background-color: #b2d231;
+    border-left: 4px solid #9bb82a;
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 25px;
+  }
+
+  .time_type1:before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 100%;
+    margin-top: -7px;
+    border: 7px solid transparent;
+    border-left-color: #b2d231;
+  }
+  
+  .post img{
+    border-radius: 5px 5px 0 0;
+  }
+
+  .post figcaption{
+    display: block;
+    background-color: #fff;
+    border-radius: 0 0 5px 5px;
+    padding: 25px 20px;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+    position: relative;
+  }
+
+  .post figcaption:before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 33px;
+    top: -20px;
+    border: 10px solid transparent;
+    border-bottom-color: #fff;
+  }
+
+  .post_info{
+    font: 16px/24px 'pf_dindisplay_proregular';
+    color: #a7a9ab;
+    margin-bottom: 10px;
+  }
+
+  .post_info span{
+    padding-right: 10px;
+  }
+
+  .post_info span i{
+    margin-top: 3px;
+    margin-right: 5px;
+  }
+
 
   
 /* ------------------------------------------------
@@ -844,3 +1221,19 @@
     22. Footer
 
 ------------------------------------------------ */
+
+  #footer{
+    background-color: #232629;
+    padding: 20px 0;
+    font: 14px/52px 'pf_dindisplay_promedium';
+    color: #f7f7f7;
+  }
+
+  .copyright{
+    float: left;
+  }
+
+  .footer_right{
+    float: right;
+    font-size: 18px;
+  }
