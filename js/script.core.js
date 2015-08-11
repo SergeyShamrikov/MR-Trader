@@ -9,6 +9,7 @@
 			var self = this;
 
 			self.dropdown();
+			self.tabs();
 			self.responsiveHorizontalNavigation.init();
 			self.backToTopBtn();
 
@@ -439,6 +440,28 @@
 				nav.removeClass('fix_menu');
 
 			}
+
+		},
+
+
+
+		/**
+		**	Tabs
+		**/
+
+		tabs : function(){
+
+			$('.tabs_list li').on('click',function(){
+
+				var $this = $(this),
+					index = $this.index(),
+					parent = $this.parents('.tabs_box');
+
+				$this.addClass('active').siblings().removeClass('active');
+
+				parent.find('.tabs_content>div').eq(index).addClass('active').siblings().removeClass('active');
+
+			});
 
 		}
 

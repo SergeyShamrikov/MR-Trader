@@ -32,7 +32,8 @@
     8.2. Tabs and Tour Sections
     8.3. Turn Box
   9. Carousels
-  11. Posts
+  11. Post Small
+    11.1. Post Small
   16. Comments
   22. Footer
     22.1. Footer Top
@@ -231,6 +232,7 @@
 
   .back_to_top{
     border: none;
+    z-index: 99;
     background-color: #b2d231;
     position: fixed;
     bottom: 20px;
@@ -1003,6 +1005,25 @@
       margin-bottom: 25px;
     }
 
+    .banner_small{
+      margin: 0 -10px 0;
+    }
+
+    .banner_small:not(:last-child){
+      margin-bottom: 25px;
+    }
+
+    .banner_small>div{
+      float: left;
+      width: 50%;
+      padding: 0 10px 0;
+    }
+    
+    .banner_small>div:not(:first-child):not(:nth-child(2)){
+      padding-top: 20px;
+    }
+
+
   /* --------------------------------------------
         7.5. Dividers
   -------------------------------------------- */
@@ -1059,6 +1080,58 @@
         8.2. Tabs and Tour Sections
   -------------------------------------------- */
     
+    .tabs_list{
+      background-color: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .tabs_list:after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .tabs_list li{
+      width: 50%;
+      float: left;
+      font: 18px/20px 'pf_dindisplay_proregular';
+      text-align: center;
+      color: #43474d;
+      padding: 20px 0;
+      border-radius: 5px;
+      cursor: pointer;
+      border-left: 1px solid transparent;
+      border-right: 1px solid transparent;
+    }
+
+    .tabs_list li:hover{
+      color: #9bb82a;
+    }
+
+    .tabs_list li.active{
+      background-color: #f1f1f1;
+      border-left: 1px solid #e0e0e0;
+      color: #43474d;
+      cursor: default;
+    }
+
+    .tabs_list li.active:first-child{
+      border-right: 1px solid #e0e0e0;
+    }
+
+    .tabs_content>div{
+      display: none;
+    }
+
+    .tabs_content>div.active{
+      display: block;
+    }
+
+    .tabs_box:not(:last-child){
+      margin-bottom: 25px;
+    }
     
 
 
@@ -1204,11 +1277,73 @@
   }
 
   .post_info span i{
-    margin-top: 3px;
+    margin-top: 2px;
     margin-right: 5px;
+    font-size: 18px;
   }
 
+  /* ------------------------------------------------
+      11.1. Post Small
+  ------------------------------------------------ */
+    
+    .post_small:not(:last-child){
+      margin-bottom: 20px;
+    }
 
+    .post_small:after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .post_small img{
+      float: left;
+      margin-right: 10px;
+    }
+
+    .post_small figcaption{
+      overflow: hidden;
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .post_small figcaption:before,
+    .post_small figcaption:after{
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 9px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: #dedede;
+    }
+
+    .post_small figcaption:after{
+      right: 0;
+      width: 1px;
+      height: 5px;
+      left: auto;
+      bottom: 7px;
+    }
+
+    .post_small_info{
+      font: 13px/16px 'pf_dindisplay_proregular';
+      color: #979799;
+      display: inline-block;
+      background-color: #f7f7f7;
+      padding-top: 10px;
+      padding-right: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .post_small_info i{
+      font-size: 14px;
+      margin-left: 5px;
+      margin-right: 3px;
+    }
+  
   
 /* ------------------------------------------------
 
