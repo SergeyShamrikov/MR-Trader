@@ -11,34 +11,34 @@
   3. Main
     3.1 Page tilte end breadcrumps
     3.2 Offsets
-  4. Header
-    4.1. Header List
-    4.2. Enter Box
-  5. Nav
-    5.1. Main navigation
-      5.1.1. Sub Menu
-    5.2. Searchform
-  7. Basic Elements
-    7.1. Typography
-    7.2. Lists
-    7.3. Buttons
-    7.4. Banners
-    7.5. Dividers
-    7.6. Tooltips
-    7.7. Forms
-    7.8. Tables
-  8. Widgets and Shortcodes
-    8.1. Accordion and Toggles
-    8.2. Tabs and Tour Sections
-    8.3. Turn Box
-  9. Carousels
-  11. Post Small
-    11.1. Post Small
-  16. Comments
-  22. Footer
-    22.1. Footer Top
-    22.2. Footer Middle
-    22.3. Footer Bottom
+  4. Basic Elements
+    4.1. Typography
+    4.2. Lists
+    4.3. Buttons
+    4.4. Banners
+    4.5. Dividers
+    4.6. Tooltips
+    4.7. Forms
+    4.8. Tables
+  5. Widgets and Shortcodes
+    5.1. Accordion and Toggles
+    5.2. Tabs and Tour Sections
+    5.3. Turn Box
+  6. Header
+    6.1. Header List
+    6.2. Enter Box
+  7. Nav
+    7.1. Main navigation
+      7.1.1. Sub Menu
+    7.2. Searchform
+  8. Carousels
+  9. Post Small
+    9.1. Post Small
+  10. Comments
+  11. Footer
+    11.1. Footer Top
+    11.2. Footer Middle
+    11.3. Footer Bottom
 =======
 */
 @import "reset.css";
@@ -85,24 +85,24 @@
 
 
    ::-webkit-input-placeholder{
-    color:#505050;
+    color:#a9a9ab;
 
     -webkit-transition: text-indent .5s ease, color .5s ease;
         transition: text-indent .5s ease, color .5s ease;
    }
 
    input::-moz-placeholder{
-    color:#505050;
+    color:#a9a9ab;
     opacity:1;
    }
 
    textarea::-moz-placeholder{
-    color: #505050;
+    color: #a9a9ab;
     opacity: 1;
    }
 
    ::ms-input-placeholder{
-    color:#505050;
+    color:#a9a9ab;
    }
 
    [placeholder]:focus::-webkit-input-placeholder{
@@ -262,476 +262,17 @@
      padding: 0 0 30px;
   }
 
-/* ------------------------------------------------
-
-    4. Header
-
------------------------------------------------- */
-   
-  #header{
-    background-color: #232629;
-    margin-bottom: 15px;
-  }
-
-  .logo{
-    padding-top: 2px;
-  }
-  
-  .logo a{
-    display: block;
-    width: 264px;
-    height: 66px;
-    background: url(../images/logo.png) 0 0 no-repeat;
-    padding: 40px 0 0 70px;
-  }
-
-  .logo_text{
-    font: 14px/16px 'pf_dindisplay_proregular';
-    color: #a7a9ab;
-    float: left;
-  }
-
-  .logo a ul{
-    float: right;
-    padding-top: 6px;
-  }
-
-  .logo a ul li{
-    float: left;
-    width: 7px;
-    height: 7px;
-    background-color: #a7a9ab;
-    margin-left: 3px;
-  }
-
-  .logo a ul li:first-child{margin-left: 0;}
-
-
-  /* --------------------------------------------
-        4.1. Languages Dropdown
-  -------------------------------------------- */
-    
-    .languages_dropdown{
-      position: relative;
-      background-color: #37393b;
-      border-right: 1px solid #404245;
-      border-left: 1px solid #404245;
-    }
-
-    .languages_dropdown.active{
-      background-color: #404245;
-    }
-
-    .languages_dropdown a{
-      display: block;
-      position: relative;
-      font-size: 16px;
-      line-height: 20px;
-      padding: 26px 16px 26px 42px;
-      font-weight: 400;
-      color: #f7f7f7;
-    }
-
-    .languages_dropdown>a i{
-      margin-top: 2px;
-    }
-
-    .languages_dropdown a img{
-      position: absolute;
-      top: 29px;
-      left: 16px;
-    }
-
-    .languages_dropdown a:hover{
-      color: #fff;
-      background-color: #404245;
-    }
-
-    .languages_dropdown>ul{
-      background-color: #404245;
-      position: absolute;
-      top: 100%;
-      left: -1px;
-      right: -1px;
-      z-index: 999;
-      border-top: 1px solid #232629;
-      opacity: 0;
-      visibility: hidden;
-      -webkit-transform: translateY(30px);
-      -ms-transform: translateY(30px);
-      -o-transform: translateY(30px);
-      transform: translateY(30px);
-      -webkit-transition: all 0.5s;
-      -o-transition: all 0.5s;
-      transition: all 0.5s;
-    }
-
-    .languages_dropdown>ul li{
-      border-bottom: 1px solid #232629;
-    }
-    
-    .languages_dropdown>ul li a{
-      padding: 15px 16px 14px 42px;
-    }
-
-    .languages_dropdown>ul li a img{
-      top: 19px;
-    }
-
-    .languages_dropdown>ul li a:hover{
-      background-color: #4e5154;
-    }
-
-    .languages_dropdown.active>ul{
-      opacity: 1;
-      visibility: visible;
-      -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-      -o-transform: translateY(0);
-      transform: translateY(0);
-      -webkit-transition: all 0.3s;
-      -o-transition: all 0.3s;
-      transition: all 0.3s;
-    }
-
-
-  /* --------------------------------------------
-        4.2. Enter Box
-  -------------------------------------------- */
-
-    .greeting{
-      display: block;
-      float: left;
-      font-size: 16px;
-      line-height: 20px;
-      padding: 26px 17px 26px 0;
-      font-weight: 400;
-      color: #f7f7f7;
-    }
-
-    .enter{
-      display: block;
-      float: left;
-      font-size: 16px;
-      line-height: 20px;
-      padding: 26px 16px 26px;
-      font-weight: 400;
-      border-right: 1px solid #404245;
-      border-left: 1px solid #404245;
-      color: #f7f7f7;
-      background-color: #37393b;
-      margin-right: 2px;
-    }
-    .enter:hover{
-      background-color: #404245;
-      color: #fff;
-    }
-
-/* ------------------------------------------------
-
-    5. Nav
-
------------------------------------------------- */
-  
-
-  .sticky_part{
-    margin-top: 15px;
-    height: 62px;
-  }
-
-  .nav_wrap{
-    position: relative;
-    border-radius: 3px;
-    background-color: #232629;
-  }
-
-  .nav_wrap.fix_menu{
-    position: fixed;
-    top: 0;
-    z-index: 99;
-  }
-  
-  /* --------------------------------------------
-      5.1. Main Navigation
-  -------------------------------------------- */
-    nav{
-      float: left;
-      font-family: 'pf_dindisplay_probold';
-    }
-
-    .navigation>li{
-      position: relative;
-      float: left;
-    }
-
-    .has_submenu{position: relative;}
-
-    .navigation>li>a{
-      display: block;
-      font-size: 16px;
-      line-height: 20px;
-      padding: 21px 17px;
-      text-transform: uppercase;
-      color: #fff;
-    }
-
-    .navigation>li:first-child>a{
-      border-radius: 3px 0 0 3px;
-    }
-
-    .navigation>li:hover>a,
-    .navigation>li.current>a{
-      background-color: #43474d;
-    }
-    
-    .toggle_menu_btn{
-      width: 62px;
-      height: 62px;
-      text-align: center;
-      background-color: #232629;
-      color: #fff;
-      border: none;
-      font-size: 20px;
-      cursor: pointer;
-      -webkit-transition: all 0.5s;
-      -o-transition: all 0.5s;
-      transition: all 0.5s;
-    }
-
-    .toggle_menu_btn:hover{
-      color: #b2d231;
-      -webkit-transition: all 0.3s;
-      -o-transition: all 0.3s;
-      transition: all 0.3s;
-    }
-
-
-  /* --------------------------------------------
-      5.2. Sub Menu
-  -------------------------------------------- */
-
-    .submenu{
-      width: 255px;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      opacity: 0;
-      z-index: 9;
-      visibility: hidden;
-      background-color: #43474d;
-      padding: 15px 0 28px;
-      font: 16px/20px 'pf_dindisplay_proregular';
-      -webkit-transform: translate(0, 20px);
-            -ms-transform: translate(0, 20px);
-             -o-transform: translate(0, 20px);
-                transform: translate(0, 20px);
-      -webkit-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        transition: all 0.4s;
-    }
-
-    .submenu .submenu{
-      top: 0;
-      left: 100%;
-    }
-
-
-    .additional_menu .submenu{
-      top: 0;
-      left: auto;
-      right: 100%;
-    }
-
-    .md_touch .t_active > .submenu,
-    .md_no-touch .has_submenu:hover > .submenu{
-      opacity: 1;
-      visibility: visible;
-       -webkit-transform: translate(0, 0);
-          -ms-transform: translate(0, 0);
-           -o-transform: translate(0, 0);
-              transform: translate(0, 0);
-    }
-    
-    .submenu>li{
-      padding: 0 15px;
-    }
-
-    .submenu>li>a{
-      display: block;
-      color: #fff;
-      padding: 16px 0 16px 15px;
-      position: relative;
-      border-bottom: 1px solid #595e66;
-    }
-
-    .submenu>li>a:hover,
-    .submenu>li.t_active > a,
-    .submenu>li.current>a{
-      background-color: #595e66;
-    }
-
-
-  /* --------------------------------------------
-      5.3. Additional Menu
-  -------------------------------------------- */
-
-    .additional_menu_box{
-      position: relative;
-      float: left;
-    }
-
-    .additional_btn{
-      display: block;
-      outline: none;
-      border: none;
-      cursor: pointer;
-      background: none;
-      font: 16px/18px 'pf_dindisplay_probold';
-      text-transform: uppercase;
-      color: #fff;
-      padding: 22px 0;
-      width: 102px;
-      text-align: center;
-      -webkit-transition: all 0.5s;
-      -o-transition: all 0.5s;
-      transition: all 0.5s;
-    }
-
-    .additional_btn:hover,
-    .additional_btn.active{
-      background-color: #43474d;
-      -webkit-transition: all 0.3s;
-      -o-transition: all 0.3s;
-      transition: all 0.3s;
-    }
-
-    .additional_menu{
-      width: 255px;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      opacity: 0;
-      z-index: 9;
-      visibility: hidden;
-      background-color: #43474d;
-      padding: 15px 0 28px;
-      font: 16px/20px 'pf_dindisplay_proregular';
-      -webkit-transform: translate(0, 20px);
-            -ms-transform: translate(0, 20px);
-             -o-transform: translate(0, 20px);
-                transform: translate(0, 20px);
-      -webkit-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        transition: all 0.4s;
-    }
-
-    .additional_menu_box.active .additional_menu{
-      opacity: 1;
-      visibility: visible;
-       -webkit-transform: translate(0, 0);
-          -ms-transform: translate(0, 0);
-           -o-transform: translate(0, 0);
-              transform: translate(0, 0);
-    }
-
-    .additional_menu>li{
-      padding: 0 15px;
-    }
-
-    .additional_menu>li>a{
-      display: block;
-      color: #fff;
-      padding: 16px 0 16px 15px;
-      position: relative;
-      border-bottom: 1px solid #595e66;
-    }
-
-    .additional_menu>li>a:hover,
-    .additional_menu>li.t_active > a,
-    .additional_menu>li.current>a{
-      background-color: #595e66;
-    }
-
-    
-
-  /* --------------------------------------------
-      5.2. Searchform
-  -------------------------------------------- */
-    
-    .search_box{
-      overflow: hidden;
-    }
-    
-    .search_form{
-      position: relative;
-      width: 100%;
-    }
-
-    .search_form input[type="text"]{
-      display: block;
-      outline: none;
-      background: #37393b;
-      border: none;
-      width: 100%;
-      border-left: 4px solid #43474d;
-      padding: 21px 55px 21px 12px;
-      color: #a7a9ab;
-      font-size: 16px;
-      line-height: 20px;
-      -webkit-transition: width 0.5s;
-      -o-transition: width 0.5s;
-      transition: width 0.5s;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-    }
-
-
-    .search_form input[type="text"]:focus{
-      font-size: 16px;
-      color: #f1f1f1;
-    }
-    .search_form button{
-      display: block;
-      position: absolute;
-      outline: none;
-      border: none;
-      width: 55px;
-      height: 62px;
-      top: 0;
-      right: 0;
-      background: none;
-      cursor: pointer;
-      text-align: center;
-      color: #a7a9ab;
-      -webkit-transition: all 0.5s;
-      -o-transition: all 0.5s;
-      transition: all 0.5s;
-    }
-
-    .search_form button:before{
-      content: "\f002";
-      font: normal normal normal 20px/62px FontAwesome;
-    }
-
-    .search_form  button:hover{
-      opacity: 0.7;
-      -webkit-transition: all 0.3s;
-      -o-transition: all 0.3s;
-      transition: all 0.3s;
-    }
-
 
 
 /* ------------------------------------------------
 
-    7. Basic Elements
+    4. Basic Elements
 
 ------------------------------------------------ */
 
 
    /* --------------------------------------------
-        7.1. Typography
+        4.1. Typography
    -------------------------------------------- */
   
       h1,h2,h3,h4,h5,h6{
@@ -774,6 +315,30 @@
 
       h6{font-size: 14px;}
 
+
+      .title1{
+        position: relative;
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        padding: 18px 60px 18px 18px;
+      }
+
+      .title1:not(:last-child){
+        margin-bottom: 20px;
+      }
+
+      .title1 i{
+        position: absolute;
+        font-size: 30px;
+        top: 50%;
+        margin-top: -15px;
+        right: 18px;
+        width: 40px;
+        text-align: center;
+        color: #cacacc ;
+      }
+
       p:not(:last-child){margin-bottom: 15px;}
 
       mark{background-color: #20cfef;padding: 0 2px;color: #fff;}
@@ -808,7 +373,7 @@
       a.icon:hover{opacity: 0.7;}
 
    /* --------------------------------------------
-        7.2. Lists
+        4.2. Lists
    -------------------------------------------- */
 
       .social_list1{
@@ -941,8 +506,21 @@
       }
 
   /* --------------------------------------------
-        7.3. Buttons
+        4.3. Buttons
   -------------------------------------------- */
+
+    button{
+      cursor: pointer;
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+
+    button:hover{
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+    }
     
     .button{
       display: inline-block;
@@ -984,11 +562,35 @@
       -o-transition: all 0.3s;
       transition: all 0.3s;
     }
+
+
+    .button_box1{
+      /*text-align: justify;*/
+      margin: 0 -3px 0 0;
+    }
+
+    .button_box1:not(:last-child){
+      margin-bottom: 25px;
+    }
+
+    .button_box1>a{
+      display: inline-block;
+      font: 14px/18px 'pf_dindisplay_promedium';
+      color: #f7f7f7;
+      padding: 10px 12px;
+      border-radius: 5px;
+      background-color: #43474d;
+      margin: 0 0 3px;
+    }
+
+    .button_box1>a:hover{
+      background-color: #b2d231;
+    }
     
 
 
   /* --------------------------------------------
-        7.4. Banners
+        4.4. Banners
   -------------------------------------------- */
     
     .banner{
@@ -999,6 +601,12 @@
 
     .banner:not(:last-child){
       margin-bottom: 15px;
+    }
+
+    .banner img,
+    .banner1 img,
+    .banner_small img{
+      max-width: 100%;
     }
 
     .banner1:not(:last-child){
@@ -1025,7 +633,7 @@
 
 
   /* --------------------------------------------
-        7.5. Dividers
+        4.5. Dividers
   -------------------------------------------- */
     
     hr{
@@ -1046,19 +654,64 @@
     
 
   /* --------------------------------------------
-        7.6. Tooltips
+        4.6. Tooltips
   -------------------------------------------- */
 
     
 
   /* --------------------------------------------
-        7.7. Forms
+        4.7. Forms
   -------------------------------------------- */
+
+    .newsletter_form{
+      background-color: #f5f5f5;
+      border-radius: 5px;
+      border: 1px solid #e0e0e0;
+      padding: 20px 13px 25px;
+    }
     
+    input:not([type="radio"]):not([type="checkbox"]){
+      width: 100%;
+      outline: none;
+      border: 1px solid #e0e0e0;
+      border-radius: 5px;
+      background-color: #fff;
+      font: 16px/20px 'pf_dindisplay_proregular';
+      padding: 12px 10px;
+      color: #43474d;
+      margin-bottom: 3px;
+    }
+
+    .newsletter_form [type="submit"]{
+      outline: none;
+      width: 100%;
+      font: 18px/20px 'pf_dindisplay_probold';
+      color: #fff;
+      padding: 12px 0;
+      text-align: center;
+      text-transform: uppercase;
+      background-color: #43474d;
+      border: 1px solid #e0e0e0;
+      border-radius: 5px;
+      margin-top: 15px;
+    }
+
+    .newsletter_form [type="submit"]:not(:last-child){
+      margin-bottom: 12px;
+    }
+
+    .newsletter_form [type="submit"]:hover{
+      background-color: #b2d231;
+    }
+
+    .newsletter_form p{
+      font: 14px/18px 'pf_dindisplay_promedium';
+      color: #43474d;
+    }
     
   
   /* --------------------------------------------
-        7.8. Tables
+        4.8. Tables
   -------------------------------------------- */
 
     
@@ -1066,18 +719,18 @@
 
 /* ------------------------------------------------
 
-    8. Widgets and Shortcodes
+    5. Widgets and Shortcodes
 
 ------------------------------------------------ */
 
 
   /* --------------------------------------------
-        8.1. Accordion and Toggles
+        5.1. Accordion and Toggles
   -------------------------------------------- */
     
 
   /* --------------------------------------------
-        8.2. Tabs and Tour Sections
+        5.2. Tabs and Tour Sections
   -------------------------------------------- */
     
     .tabs_list{
@@ -1136,18 +789,483 @@
 
 
   /* --------------------------------------------
-        8.3. Turn Box
+        5.3. Turn Box
   -------------------------------------------- */
  
+
 /* ------------------------------------------------
 
-    9. Carousels
+    6. Header
+
+------------------------------------------------ */
+   
+  #header{
+    background-color: #232629;
+    margin-bottom: 15px;
+  }
+
+  .logo{
+    padding-top: 2px;
+  }
+  
+  .logo a{
+    display: block;
+    width: 264px;
+    height: 66px;
+    background: url(../images/logo.png) 0 0 no-repeat;
+    padding: 40px 0 0 70px;
+  }
+
+  .logo_text{
+    font: 14px/16px 'pf_dindisplay_proregular';
+    color: #a7a9ab;
+    float: left;
+  }
+
+  .logo a ul{
+    float: right;
+    padding-top: 6px;
+  }
+
+  .logo a ul li{
+    float: left;
+    width: 7px;
+    height: 7px;
+    background-color: #a7a9ab;
+    margin-left: 3px;
+  }
+
+  .logo a ul li:first-child{margin-left: 0;}
+
+
+  /* --------------------------------------------
+        6.1. Languages Dropdown
+  -------------------------------------------- */
+    
+    .languages_dropdown{
+      position: relative;
+      background-color: #37393b;
+      border-right: 1px solid #404245;
+      border-left: 1px solid #404245;
+    }
+
+    .languages_dropdown.active{
+      background-color: #404245;
+    }
+
+    .languages_dropdown a{
+      display: block;
+      position: relative;
+      font-size: 16px;
+      line-height: 20px;
+      padding: 26px 16px 26px 42px;
+      font-weight: 400;
+      color: #f7f7f7;
+    }
+
+    .languages_dropdown>a i{
+      margin-top: 2px;
+    }
+
+    .languages_dropdown a img{
+      position: absolute;
+      top: 29px;
+      left: 16px;
+    }
+
+    .languages_dropdown a:hover{
+      color: #fff;
+      background-color: #404245;
+    }
+
+    .languages_dropdown>ul{
+      background-color: #404245;
+      position: absolute;
+      top: 100%;
+      left: -1px;
+      right: -1px;
+      z-index: 999;
+      border-top: 1px solid #232629;
+      opacity: 0;
+      visibility: hidden;
+      -webkit-transform: translateY(30px);
+      -ms-transform: translateY(30px);
+      -o-transform: translateY(30px);
+      transform: translateY(30px);
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+
+    .languages_dropdown>ul li{
+      border-bottom: 1px solid #232629;
+    }
+    
+    .languages_dropdown>ul li a{
+      padding: 15px 16px 14px 42px;
+    }
+
+    .languages_dropdown>ul li a img{
+      top: 19px;
+    }
+
+    .languages_dropdown>ul li a:hover{
+      background-color: #4e5154;
+    }
+
+    .languages_dropdown.active>ul{
+      opacity: 1;
+      visibility: visible;
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0);
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+
+
+  /* --------------------------------------------
+        6.2. Enter Box
+  -------------------------------------------- */
+
+    .greeting{
+      display: block;
+      float: left;
+      font-size: 16px;
+      line-height: 20px;
+      padding: 26px 17px 26px 0;
+      font-weight: 400;
+      color: #f7f7f7;
+    }
+
+    .enter{
+      display: block;
+      float: left;
+      font-size: 16px;
+      line-height: 20px;
+      padding: 26px 16px 26px;
+      font-weight: 400;
+      border-right: 1px solid #404245;
+      border-left: 1px solid #404245;
+      color: #f7f7f7;
+      background-color: #37393b;
+      margin-right: 2px;
+    }
+    .enter:hover{
+      background-color: #404245;
+      color: #fff;
+    }
+
+/* ------------------------------------------------
+
+    7. Nav
+
+------------------------------------------------ */
+  
+
+  .sticky_part{
+    margin-top: 15px;
+    height: 62px;
+  }
+
+  .nav_wrap{
+    position: relative;
+    border-radius: 3px;
+    background-color: #232629;
+  }
+
+  .sticky_part.sticky_enabled{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-top: 0;
+    z-index: 99;
+  }
+  
+  /* --------------------------------------------
+      7.1. Main Navigation
+  -------------------------------------------- */
+    nav{
+      float: left;
+      font-family: 'pf_dindisplay_probold';
+    }
+
+    .navigation>li{
+      position: relative;
+      float: left;
+    }
+
+    .has_submenu{position: relative;}
+
+    .navigation>li>a{
+      display: block;
+      font-size: 16px;
+      line-height: 20px;
+      padding: 21px 17px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .navigation>li:first-child>a{
+      border-radius: 3px 0 0 3px;
+    }
+
+    .navigation>li:hover>a,
+    .navigation>li.current>a{
+      background-color: #43474d;
+    }
+    
+    .toggle_menu_btn{
+      width: 62px;
+      height: 62px;
+      text-align: center;
+      background-color: #232629;
+      color: #fff;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+
+    .toggle_menu_btn:hover{
+      color: #b2d231;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+
+
+  /* --------------------------------------------
+      7.2. Sub Menu
+  -------------------------------------------- */
+
+    .submenu{
+      width: 255px;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      opacity: 0;
+      z-index: 9;
+      visibility: hidden;
+      background-color: #43474d;
+      padding: 15px 0 28px;
+      font: 16px/20px 'pf_dindisplay_proregular';
+      -webkit-transform: translate(0, 20px);
+            -ms-transform: translate(0, 20px);
+             -o-transform: translate(0, 20px);
+                transform: translate(0, 20px);
+      -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+
+    .submenu .submenu{
+      top: 0;
+      left: 100%;
+    }
+
+
+    .additional_menu .submenu{
+      top: 0;
+      left: auto;
+      right: 100%;
+    }
+
+    .md_touch .t_active > .submenu,
+    .md_no-touch .has_submenu:hover > .submenu{
+      opacity: 1;
+      visibility: visible;
+       -webkit-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+           -o-transform: translate(0, 0);
+              transform: translate(0, 0);
+    }
+    
+    .submenu>li{
+      padding: 0 15px;
+    }
+
+    .submenu>li>a{
+      display: block;
+      color: #fff;
+      padding: 16px 0 16px 15px;
+      position: relative;
+      border-bottom: 1px solid #595e66;
+    }
+
+    .submenu>li>a:hover,
+    .submenu>li.t_active > a,
+    .submenu>li.current>a{
+      background-color: #595e66;
+    }
+
+
+  /* --------------------------------------------
+      7.3. Additional Menu
+  -------------------------------------------- */
+
+    .additional_menu_box{
+      position: relative;
+      float: left;
+    }
+
+    .additional_btn{
+      display: block;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      background: none;
+      font: 16px/18px 'pf_dindisplay_probold';
+      text-transform: uppercase;
+      color: #fff;
+      padding: 22px 0;
+      width: 102px;
+      text-align: center;
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+
+    .additional_btn:hover,
+    .additional_btn.active{
+      background-color: #43474d;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+
+    .additional_menu{
+      width: 255px;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      opacity: 0;
+      z-index: 9;
+      visibility: hidden;
+      background-color: #43474d;
+      padding: 15px 0 28px;
+      font: 16px/20px 'pf_dindisplay_proregular';
+      -webkit-transform: translate(0, 20px);
+            -ms-transform: translate(0, 20px);
+             -o-transform: translate(0, 20px);
+                transform: translate(0, 20px);
+      -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+
+    .additional_menu_box.active .additional_menu{
+      opacity: 1;
+      visibility: visible;
+       -webkit-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+           -o-transform: translate(0, 0);
+              transform: translate(0, 0);
+    }
+
+    .additional_menu>li{
+      padding: 0 15px;
+    }
+
+    .additional_menu>li>a{
+      display: block;
+      color: #fff;
+      padding: 16px 0 16px 15px;
+      position: relative;
+      border-bottom: 1px solid #595e66;
+    }
+
+    .additional_menu>li>a:hover,
+    .additional_menu>li.t_active > a,
+    .additional_menu>li.current>a{
+      background-color: #595e66;
+    }
+
+    
+
+  /* --------------------------------------------
+      7.2. Searchform
+  -------------------------------------------- */
+    
+    .search_box{
+      overflow: hidden;
+    }
+    
+    .search_form{
+      position: relative;
+      width: 100%;
+    }
+
+    .search_form input[type="text"]{
+      display: block;
+      border-radius: 0;
+      margin: 0;
+      outline: none;
+      background: #37393b;
+      border: none;
+      width: 100%;
+      border-left: 4px solid #43474d;
+      padding: 21px 55px 21px 12px;
+      color: #a7a9ab;
+      font-size: 16px;
+      line-height: 20px;
+      -webkit-transition: width 0.5s;
+      -o-transition: width 0.5s;
+      transition: width 0.5s;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+
+    .search_form input[type="text"]:focus{
+      font-size: 16px;
+      color: #f1f1f1;
+    }
+    .search_form button{
+      display: block;
+      position: absolute;
+      outline: none;
+      border: none;
+      width: 55px;
+      height: 62px;
+      top: 0;
+      right: 0;
+      background: none;
+      cursor: pointer;
+      text-align: center;
+      color: #a7a9ab;
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+
+    .search_form button:before{
+      content: "\f002";
+      font: normal normal normal 20px/62px FontAwesome;
+    }
+
+    .search_form  button:hover{
+      opacity: 0.7;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+
+
+/* ------------------------------------------------
+
+    8. Carousels
 
 ------------------------------------------------ */
 
 /* ------------------------------------------------
 
-    11. Posts
+    9. Posts
 
 ------------------------------------------------ */
   
@@ -1241,6 +1359,7 @@
   }
   
   .post img{
+    max-width: 100%;
     border-radius: 5px 5px 0 0;
   }
 
@@ -1283,7 +1402,7 @@
   }
 
   /* ------------------------------------------------
-      11.1. Post Small
+      9.1. Post Small
   ------------------------------------------------ */
     
     .post_small:not(:last-child){
@@ -1347,13 +1466,140 @@
   
 /* ------------------------------------------------
 
-    16. Comments
+    10. Comments
 
 ------------------------------------------------ */
   
+  .comments_box:not(:last-child){
+    margin-bottom: 25px;
+  }
+
+  .comment{
+    position: relative;
+    padding-bottom: 18px;
+  }
+
+  .comment:not(:last-child){
+    margin-bottom: 20px;
+  }
+
+  .comment:before{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+    height: 7px;
+    border-radius: 0 0 7px 7px;
+  }
+
+  .comment:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 14px;
+    right: 0;
+    width: 43px;
+    height: 37px;
+    background: url(../images/comment_after.png) 0 0 no-repeat;
+  }
+
+  .comment_author{
+    display: table;
+    width: 100%;
+  }
+
+  .comment_author>div{
+    display: table-cell;
+    vertical-align: middle;
+    padding-bottom: 10px;
+  }
+
+  .comment_author>div:first-child{
+    width: 93px;
+  }
+
+  .comment_author>div:last-child{
+    padding-right: 43px;
+  }
+
+  .author_img{
+    display: inline-block;
+    vertical-align: middle;
+    width: 80px;
+    height: 70px;
+    background-color: #f1f1f1;
+    position: relative;
+  }
+
+  .author_img:after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-top-color: #f1f1f1;
+    top: 100%;
+    left: 50%;
+    margin-left: -6px;
+  }
+
+  .author_img:before{
+    content: "\f007";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    background-color: #e0e0e0;
+    font: normal normal normal 35px/50px FontAwesome;
+  }
+
+  .author_img>img{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -25px;
+    border-radius: 50%;
+  }
+
+  .author_name{
+    font-size: 15px;
+    line-height: 18px;
+    color: #232629;
+    margin-bottom: 0;
+    font-weight: 600;
+  }
+
+  .author_post{
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 600;
+    color: #8d8f91;
+  }
+
+  .comment p{
+    font-size: 14px;
+    line-height: 22px;
+  }
+  
+  
 /* ------------------------------------------------
 
-    22. Footer
+    11. Footer
 
 ------------------------------------------------ */
 

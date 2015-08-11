@@ -10,6 +10,7 @@
 
 			self.dropdown();
 			self.tabs();
+			self.stickyHeader.init();
 			self.responsiveHorizontalNavigation.init();
 			self.backToTopBtn();
 
@@ -19,7 +20,7 @@
 
 			var self = this;
 
-			self.sticky();
+			// self.stickyHeader.init();
 			
 		},
 
@@ -27,14 +28,13 @@
 
 			var self = this;
 			
-			self.sticky();
+			// self.sticky();
 		},
 
 		windowResize: function(){
 
 			var self = this;
 
-			// self.additionalMenuItem();
 			self.responsiveHorizontalNavigation.init();
 
 		},
@@ -421,27 +421,95 @@
 		**	Sticky
 		**/
 
-		sticky : function(){
+		stickyHeader: {
 
-			var windowScroll = $(window).scrollTop(),
-				offset = $('.sticky_part').offset().top,
-				sticky = $('.sticky_part').width(),
-				nav = $(".nav_wrap");
+			init: function(){
 
-			nav.width(sticky);
+				this.sticky = $('.sticky_part');
+				this.w = $(window);
+				this.body = $('body');
 
-			if(windowScroll>offset){
-				
-				nav.addClass('fix_menu');				
-			}
+				this.initHeaderParameters();
+				this.toggleSticky();
+				this.bindEvents();
 
-			else{
+			},
 
-				nav.removeClass('fix_menu');
+			initHeaderParameters: function(){
+
+				var self = this;
+
+				self.hHeight = self.sticky.outerHeight();
+				self.hOffset = self.sticky.offset().top;
+				self.sticky.data('stickyInit', true);
+
+			},
+
+			toggleSticky: function(){
+
+				var self = this;
+
+				if(self.w.scrollTop() > self.hOffset && !self.sticky.hasClass('sticky_enabled')){
+					self.sticky.addClass('sticky_enabled');
+					self.disableEmptyArea(true);
+				}
+				else if(self.w.scrollTop() <= self.hOffset){
+					self.sticky.removeClass('sticky_enabled');
+					self.disableEmptyArea(false);
+				}
+
+			},
+
+			bindEvents: function(){
+
+				var self = this;
+
+				self.w.on('scroll.sticky', function(){
+
+					self.toggleSticky();
+
+				});
+
+				self.w.on('resize.sticky', self.initHeaderParameters.bind(self));
+
+			},
+
+			disableEmptyArea: function(isNeed){
+
+				var self = this;
+
+				if(isNeed){
+					self.body.css('padding-top', self.hHeight);
+				}
+				else{
+					self.body.css('padding-top', 0);
+				}
 
 			}
 
 		},
+
+		// sticky : function(){
+
+		// 	var windowScroll = $(window).scrollTop(),
+		// 		offset = $('.sticky_part').offset().top,
+		// 		sticky = $('.sticky_part').width(),
+		// 		nav = $(".nav_wrap");
+
+		// 	nav.width(sticky);
+
+		// 	if(windowScroll>offset){
+				
+		// 		nav.addClass('fix_menu');				
+		// 	}
+
+		// 	else{
+
+		// 		nav.removeClass('fix_menu');
+
+		// 	}
+
+		// },
 
 
 
