@@ -45,7 +45,9 @@
 
 		dropdown : function(){
 
-		    $('.languages_dropdown>a').on('click',function(){
+		    $('.languages_dropdown>a').on('click',function(event){
+
+		    	event.preventDefault();
 
 		    	$(this).parents('.languages_dropdown').toggleClass('active');
 
