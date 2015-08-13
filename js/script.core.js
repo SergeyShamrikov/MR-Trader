@@ -4,13 +4,18 @@
 
 	var Core = {
 
+
+		// constants
+
+		ISTOUCH: $('html').hasClass('md_touch'),
+
 		DOMReady: function(){
 
 			var self = this;
 
 			self.dropdown();
 			self.tabs();
-			self.stickyHeader.init();
+			self.stickyHeader();
 			self.responsiveHorizontalNavigation.init();
 			self.backToTopBtn();
 
@@ -28,7 +33,7 @@
 
 			var self = this;
 			
-			// self.sticky();
+			self.stickyHeader();
 		},
 
 		windowResize: function(){
@@ -115,7 +120,6 @@
 
 
 				if(fullWidh > (navWrap-303) && self.w.width() > 767){
-
 
 					if(!self.aButton.length){
 
@@ -253,11 +257,14 @@
 					});
 
 					self.mButton.removeClass('active');
+					
+					self.isStickyInit.removeClass('active');
 
 				}
 				else{
 				
 					self.nav.find('.t_active').removeClass('t_active');
+
 
 				}
 
@@ -339,6 +346,17 @@
 
 				});
 
+				self.d.on('click.navFocusOut', function(event){
+
+					if(!$(event.target).closest("nav").length){
+						
+						self.closeOpenedMenus();
+						$('.submenu').slideUp();	
+					} 
+
+				});
+
+
 			},
 
 			generateBtn: function(){
@@ -355,6 +373,8 @@
 					var $this = $(this);
 
 					$this.toggleClass('active');
+
+					self.isStickyInit.toggleClass('active');
 
 					$this.next().slideToggle(function(){
 
@@ -423,70 +443,28 @@
 		**	Sticky
 		**/
 
-		stickyHeader: {
+		stickyHeader: function (){
 
-			init: function(){
+			var windowScroll = $(window).scrollTop(),
+				sticky = $('.sticky_part'),
+				stickyHeight = $('.sticky_part').height(),
+				box = $(".sticky_box"),
+				offset = box.offset().top;
 
-				this.sticky = $('.sticky_part');
-				this.w = $(window);
-				this.body = $('body');
+			box.height(stickyHeight);
 
-				this.initHeaderParameters();
-				this.toggleSticky();
-				this.bindEvents();
+			if($(window).width()>767){
 
-			},
+				if(windowScroll>offset){
 
-			initHeaderParameters: function(){
-
-				var self = this;
-
-				self.hHeight = self.sticky.outerHeight();
-				self.hOffset = self.sticky.offset().top;
-				self.sticky.data('stickyInit', true);
-
-			},
-
-			toggleSticky: function(){
-
-				var self = this;
-
-				if(self.w.scrollTop() > self.hOffset && !self.sticky.hasClass('sticky_enabled')){
-					self.sticky.addClass('sticky_enabled');
-					self.disableEmptyArea(true);
-				}
-				else if(self.w.scrollTop() <= self.hOffset){
-					self.sticky.removeClass('sticky_enabled');
-					self.disableEmptyArea(false);
-				}
-
-			},
-
-			bindEvents: function(){
-
-				var self = this;
-
-				self.w.on('scroll.sticky', function(){
-
-					self.toggleSticky();
-
-				});
-
-				self.w.on('resize.sticky', self.initHeaderParameters.bind(self));
-
-			},
-
-			disableEmptyArea: function(isNeed){
-
-				var self = this;
-
-				if(isNeed){
-					self.body.css('padding-top', self.hHeight);
+					sticky.addClass('sticky_enabled');
 				}
 				else{
-					self.body.css('padding-top', 0);
+					sticky.removeClass('sticky_enabled');
 				}
-
+			}
+			else{
+				sticky.removeClass('sticky_enabled');
 			}
 
 		},
