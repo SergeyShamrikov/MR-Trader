@@ -74,7 +74,10 @@
 		padding: 13px 60px 13px 15px;
 	}
 
-	.title1 i{font-size: 25px;}
+	.title1 i{
+		font-size: 24px;
+		margin-top: -12px;
+	}
 
 
 	/*post*/
