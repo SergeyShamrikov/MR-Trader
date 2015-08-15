@@ -134,6 +134,29 @@
 					},100);
 				}
 
+				else if(fullWidh < (navWrap-303) && self.w.width() > 767){
+
+					$('.additional_menu>li').each(function(){
+
+						var fullWidh = 0;
+
+						$(this).appendTo(".navigation");
+
+						$(".navigation>li").each(function(){
+
+							fullWidh += $(this).width();
+
+						});
+
+						if(fullWidh > (navWrap-303)){
+
+							self.additionalMenu();
+							return
+						}
+
+					});
+				}
+
 				else if(self.w.width() < 768){
 
 					$('.additional_menu>li').each(function(){
