@@ -20,7 +20,7 @@
 
 	.post_right_part{width: 415px;}
 
-	.page_nav{padding-left: 195px;}
+	
 }
 
 @media only screen and (max-width: 992px) {
@@ -82,23 +82,23 @@
 
 	/*post*/
 
-	.post_nav{
+	.post_filter{
 		border: none;
 		background: none;
 		text-align: center;
 		margin-bottom: 25px;
 	}
 
-	.post_nav:before{display: none;}
+	.post_filter:before{display: none;}
 
 	.post:after, .post:before{display: none;}
 
-	.post_nav time{
+	.post_filter time{
 		float: none;
 		padding: 15px 0;
 	}
 
-	.post_nav_list{
+	.post_filter_list{
 		display: inline-block;
 	    background-color: #fff;
 	    border: 1px solid #e0e0e0;
@@ -106,11 +106,11 @@
 	    overflow: hidden;
 	}
 
-	.post_nav_list li:last-child a{
+	.post_filter_list li:last-child a{
 		border-right: none;
 	}
 
-	.post_nav_list li a{
+	.post_filter_list li a{
 		font-size: 16px;
 		padding: 15px 10px;
 	}
@@ -134,7 +134,7 @@
 		padding: 0 15px 15px;
 	}
 
-	.post figcaption{
+	.post .post_desctiption{
 		border: none;
 		padding: 15px;
 	}
@@ -158,12 +158,12 @@
 		display: none;
 	}
 
-	.post figcaption .button{
+	.post .post_desctiption .button{
 		width: 100%;
 		text-align: center;
 	}
 
-	.post figcaption .button:before{
+	.post .post_desctiption .button:before{
 		display: none;
 	}
 
@@ -192,9 +192,6 @@
 		display: block;
 	}
 
-	.page_nav{
-		padding-left: 0;
-	}
 
 	.page_nav li a{
 		font-size: 15px;
@@ -423,7 +420,7 @@
 		max-width: 115px;
 	}
 
-	.post_nav_list li a{
+	.post_filter_list li a{
 		padding: 15px 7px;
 	}
 
