@@ -20,6 +20,14 @@
 
 	.post_right_part{width: 415px;}
 
+	.leave_comment_left{
+		width: 235px;
+	}
+
+	.leave_comment_right{
+		width: 320px;
+	}
+
 	
 }
 
@@ -78,6 +86,22 @@
 		font-size: 24px;
 		margin-top: -12px;
 	}
+	
+	.title2{
+		font-size: 20px;
+		line-height: 26px;
+	}
+
+	.title2>span{
+		font-size: 14px;
+		line-height: 26px;
+		float: none;
+		display: block;
+	}
+
+	.comment_excerpt{
+		font-size: 13px;
+	}
 
 
 	/*post*/
@@ -90,8 +114,13 @@
 	}
 
 	.post_filter:before{display: none;}
+	
+	.post{border: none;}
 
-	.post:after, .post:before{display: none;}
+	[class*="box_style"]:before,
+	.box_style1:after{
+		display: none;
+	}
 
 	.post_filter time{
 		float: none;
@@ -205,6 +234,22 @@
 		padding: 15px;
 	}
 
+
+	/*leave comment form*/
+
+	.leave_comment_left,
+	.leave_comment_right{
+		float: none;
+		width: auto;
+	}
+
+	.leave_comment_left{margin-bottom: 10px;}
+
+	.comment_btn{
+		width: 100%;
+		text-align: center;
+	}
+	
 
 	/*footer*/
 	.footer_right{
@@ -403,6 +448,33 @@
 		font-size: 30px;
 		line-height: 30px;
  	}
+	
+	.xs_w100{width: 100%;}
+
+	.comment_excerpt{
+		width: 100%;
+		padding-top: 10px;
+	}
+
+	.comment_autor{
+		display: table;
+	}
+
+	.comment_autor>*{
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	[class*="comment_level"] .author_img{
+		width: 70px;
+		height: 70px;
+		margin-right: 15px;
+	}
+
+	.comment_level2{
+		margin-left: 30px;
+	}
+
 
 }
 
@@ -427,6 +499,7 @@
 	.post_info span{
 		padding-right: 5px;
 	}
-
+	
+	.prev_post{display: none;}
 
 }

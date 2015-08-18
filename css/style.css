@@ -35,6 +35,8 @@
     9.1. Post Small
     9.2. Post Nav
   10. Comments
+    10.1. Comments Small
+    10.2. Leave Comment
   11. Footer
     11.1. Footer Top
     11.2. Footer Middle
@@ -127,6 +129,7 @@
     
     .accent_color{color: #b2d231;}
     .grey_color{color: #a7a9ab;}
+    .red_color{color: #ff1616;}
 
   /* --------------------------------------------
         1.2. Fonts
@@ -261,11 +264,6 @@
     margin: 0;
   }
 
-
-  .section_offset{
-     padding: 13px 20px;
-  }
-
   [class*="box_style"]{
     position: relative;
     background-color: #fff;
@@ -363,6 +361,17 @@
         padding: 6px 0 12px;
         border-bottom: 1px solid #e0e0e0;
         margin-bottom: 25px;
+      }
+
+      .title2>span{
+        font: 16px/30px 'pf_dindisplay_proregular';
+        color: #757778;
+      }
+
+      .title2:after{
+        content: "";
+        display: block;
+        clear: both;
       }
 
       .title2:before{
@@ -769,8 +778,11 @@
       margin-bottom: 3px;
     }
 
-    input:not([type="radio"]):not([type="checkbox"]):focus{
+    input:not([type="radio"]):not([type="checkbox"]):focus,
+    textarea:focus{
       border-color: #b2d231;
+      -webkit-box-shadow: 0 0 10px rgba(178,210,49,0.5);
+      box-shadow: 0 0 10px rgba(178,210,49,0.5);
     }
 
     .newsletter_form [type="submit"]{
@@ -1327,6 +1339,8 @@
 
     .search_form input[type="text"]{
       display: block;
+      -webkit-box-shadow: none;
+      box-shadow: none;
       border-radius: 0;
       margin: 0;
       outline: none;
@@ -1387,6 +1401,14 @@
     8. Carousels
 
 ------------------------------------------------ */
+
+  .carousel_box{
+    padding: 13px 20px;
+  }
+
+  .carousel_box:not(:last-child){
+    margin-bottom: 30px;
+  }
   
   .carousel_post{
     margin: 0 -10px;
@@ -1398,11 +1420,11 @@
   }
 
   .post_slider img{
-    max-width: 100%;
+    width: 100%;
     margin-bottom: 10px;
   }
 
-  .post_slider h6{
+  .post_slider .post_slider_title{
     line-height: 18px;
     margin-bottom: 0px;
   }
@@ -1656,7 +1678,8 @@
       clear: both;
     }
 
-    .post_small img{
+    .post_small_img{
+      display: block;
       float: left;
       margin-right: 10px;
     }
@@ -1685,6 +1708,11 @@
       height: 5px;
       left: auto;
       bottom: 7px;
+    }
+
+    .post_small_title{
+      margin-bottom: 0;
+      line-height: 1.7;
     }
 
     .post_small_info{
@@ -1791,132 +1819,314 @@
 
 ------------------------------------------------ */
   
+  .comments_box:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+
   .comments_box:not(:last-child){
+    margin-bottom: 30px;
+  }
+
+  [class*="comment_level"]{
+    padding: 20px 22px 28px;
+    float: right;
+  }
+
+  .comment_level2{
+    margin-left: 63px;
+  }
+
+  [class*="comment_level"]:not(:last-child){
     margin-bottom: 25px;
   }
-
-  .comment{
-    position: relative;
-    padding-bottom: 18px;
-  }
-
-  .comment:not(:last-child){
-    margin-bottom: 20px;
-  }
-
-  .comment:before{
-    content: "";
+  
+  [class*="comment_level"] .author_img{
+    height: 80px;
+    float: left;
     display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border: 1px solid #e0e0e0;
-    border-top: none;
-    height: 7px;
-    border-radius: 0 0 7px 7px;
+    margin-right: 20px;
   }
 
-  .comment:after{
-    content: "";
-    display: block;
-    position: absolute;
-    top: 14px;
-    right: 0;
-    width: 43px;
-    height: 37px;
-    background: url(../images/comment_after.png) 0 0 no-repeat;
-  }
-
-  .comment_author{
-    display: table;
-    width: 100%;
-  }
-
-  .comment_author>div{
-    display: table-cell;
-    vertical-align: middle;
-    padding-bottom: 10px;
-  }
-
-  .comment_author>div:first-child{
-    width: 93px;
-  }
-
-  .comment_author>div:last-child{
-    padding-right: 43px;
-  }
-
-  .author_img{
-    display: inline-block;
-    vertical-align: middle;
-    width: 80px;
-    height: 70px;
-    background-color: #f1f1f1;
-    position: relative;
-  }
-
-  .author_img:after{
-    content: "";
-    display: block;
-    position: absolute;
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-top-color: #f1f1f1;
-    top: 100%;
-    left: 50%;
-    margin-left: -6px;
-  }
-
-  .author_img:before{
-    content: "\f007";
-    display: block;
-    position: absolute;
+  [class*="comment_level"] .author_img:after{
     top: 50%;
-    left: 50%;
-    margin-top: -25px;
-    margin-left: -25px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    color: #fff;
-    text-align: center;
-    background-color: #e0e0e0;
-    font: normal normal normal 35px/50px FontAwesome;
+    margin-top: -6px;
+    left: 100%;
+    margin-left: 0;
+    border-color: transparent;
+    border-left-color: #f1f1f1;
   }
 
-  .author_img>img{
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -25px;
-    margin-left: -25px;
-    border-radius: 50%;
-  }
-
-  .author_name{
+  .comments_title{
     font-size: 15px;
     line-height: 18px;
     color: #232629;
-    margin-bottom: 0;
     font-weight: 600;
+    margin-bottom: 0;
   }
 
-  .author_post{
+  .comments_title a{color: inherit;}
+  .comments_title a:hover{color: #9bb82a;}
+
+  [class*="comment_level"] time{
     font-size: 13px;
     line-height: 18px;
-    font-weight: 600;
     color: #8d8f91;
   }
 
-  .comment p{
+  .comment_excerpt{
+    overflow: hidden;
     font-size: 14px;
     line-height: 22px;
   }
-  
+
+  .reply_btn{
+    outline: none;
+    border: none;
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    z-index: 9;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 22px;
+    color: #fff;
+    font-weight: 600;
+    padding: 0 11px;
+    border-radius: 3px;
+    background-color: #aaaaaa;
+  }
+
+  .reply_btn:hover{
+    color: #fff;
+    background-color: #919191;
+  }
+
+
+  /* ------------------------------------------------
+      10.1. Comments Small
+  ------------------------------------------------ */
+      
+    .comments_small_box:not(:last-child){
+      margin-bottom: 25px;
+    }
+
+    .comment_small{
+      position: relative;
+      padding-bottom: 18px;
+    }
+
+    .comment_small:not(:last-child){
+      margin-bottom: 20px;
+    }
+
+    .comment_small:before{
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border: 1px solid #e0e0e0;
+      border-top: none;
+      height: 7px;
+      border-radius: 0 0 7px 7px;
+    }
+
+    .comment_small:after{
+      content: "";
+      display: block;
+      position: absolute;
+      top: 14px;
+      right: 0;
+      width: 43px;
+      height: 37px;
+      background: url(../images/comment_after.png) 0 0 no-repeat;
+    }
+
+    .comment_small_author{
+      display: table;
+      width: 100%;
+    }
+
+    .comment_small_author>div{
+      display: table-cell;
+      vertical-align: middle;
+      padding-bottom: 10px;
+    }
+
+    .comment_small_author>div:first-child{
+      width: 93px;
+    }
+
+    .comment_small_author>div:last-child{
+      padding-right: 43px;
+    }
+
+    .author_img{
+      display: inline-block;
+      vertical-align: middle;
+      width: 80px;
+      height: 70px;
+      background-color: #f1f1f1;
+      position: relative;
+    }
+
+    .author_img:after{
+      content: "";
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-top-color: #f1f1f1;
+      top: 100%;
+      left: 50%;
+      margin-left: -6px;
+    }
+
+    .author_img:before{
+      content: "\f007";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -25px;
+      margin-left: -25px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      color: #fff;
+      text-align: center;
+      background-color: #e0e0e0;
+      font: normal normal normal 35px/50px FontAwesome;
+    }
+
+    .author_img>img{
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -25px;
+      margin-left: -25px;
+      border-radius: 50%;
+    }
+
+    .author_name{
+      font-size: 15px;
+      line-height: 18px;
+      color: #232629;
+      margin-bottom: 0;
+      font-weight: 600;
+    }
+
+    .author_name a{color: inherit;}
+    .author_name a:hover{color: #9bb82a;}
+
+    .author_post{
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 600;
+      color: #8d8f91;
+    }
+
+    .comment_small p{
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+
+  /* ------------------------------------------------
+      10.2. Leave Comment
+  ------------------------------------------------ */
+    
+    .form_box{
+      padding: 13px 20px 30px;
+    }
+
+    .form_box:not(:last-child){
+      margin-bottom: 30px;
+    }
+
+    .leave_comment_form>*:not(:last-child){
+      margin-bottom: 30px;
+    }
+
+    .leave_comment_left{
+      float: left;
+      width: 293px;
+    }
+
+    .leave_comment_right{
+      float: right;
+      width: 495px;
+    }
+
+    .leave_comment_form input:not([type="radio"]):not([type="checkbox"]),
+    .leave_comment_form textarea{
+      border: 1px solid #ededed;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+      padding: 12px 10px;
+      margin-bottom: 0;
+      width: 100%;
+    }
+
+    .leave_comment_form textarea{
+      resize:none;
+      height: 158px;
+    }
+
+    .input_box{
+      position: relative;
+    }
+
+    .input_box:not(:last-child){
+      margin-bottom: 10px;
+    }
+
+    .input_box label{
+      display: block;
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      font: 16px/20px 'pf_dindisplay_proregular';
+      opacity: 1;
+      visibility: visible;
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+
+    .input_box label.active,
+    .leave_comment_form textarea:focus + label,
+    .leave_comment_form input:not([type="radio"]):not([type="checkbox"]):focus + label{
+      opacity: 0;
+      visibility: hidden;
+      text-indent:10em;
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+
+    .comment_btn{
+      display: inline-block;
+      outline: none;
+      border: none;
+      background-color: #43474d;
+      border-radius: 5px;
+      font-size: 14px;
+      line-height: 24px;
+      color: #fff;
+      padding: 11px 18px;
+    }
+
+    .comment_btn:hover{
+      color: #fff;
+      background-color: #b2d231;
+    }
   
 /* ------------------------------------------------
 
