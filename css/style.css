@@ -32,8 +32,10 @@
     7.2. Searchform
   8. Carousels
   9. Post Small
-    9.1. Post Small
-    9.2. Post Nav
+    9.1. Post Type1
+    9.2. Post Type2
+    9.3. Post Small
+    9.4. Post Nav
   10. Comments
     10.1. Comments Small
     10.2. Leave Comment
@@ -298,6 +300,26 @@
   }
 
 
+  .row{
+    margin: 0 -10px;
+  }
+
+  .row:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+  
+  [class*="col-"]{
+    float: left;
+    padding: 0 10px;
+  }
+
+  .col-2{
+    width: 50%;
+  }
+
+
 
 
 /* ------------------------------------------------
@@ -320,7 +342,7 @@
          position: relative;
       }
 
-      h1{font-size: 38px;}
+      h1{font-size: 20px;}
 
       h2{
         font-family: 'pf_dindisplay_probold';
@@ -349,6 +371,12 @@
 
       h6{font-size: 14px;}
 
+      .main_title{
+        font: 20px/24px 'pf_dindisplay_probold';
+        padding: 18px 20px;
+        text-transform: uppercase;
+        margin-bottom: 0;
+      }
 
       .title1{
         padding: 18px 60px 18px 18px;
@@ -400,6 +428,12 @@
         color: #cacacc ;
       }
 
+      .post1_title{
+        font: 16px/24px 'pf_dindisplay_probold';
+        margin-bottom: 5px;
+        text-transform: uppercase;
+      }
+
       p:not(:last-child){margin-bottom: 15px;}
       
       strong{font-weight: 600;}
@@ -434,7 +468,7 @@
       }
       a:hover{
          color: #9bb82a;
-         text-decoration: none;
+         text-decoration: underline;
          -webkit-transition: all 0.3s;
          -o-transition: all 0.3s;
          transition: all 0.3s;
@@ -600,6 +634,10 @@
         cursor: default;
       }
 
+      .page_nav li a:hover{
+        text-decoration: none;
+      }
+
   /* --------------------------------------------
         4.3. Buttons
   -------------------------------------------- */
@@ -650,6 +688,7 @@
     .button:hover{
       color: #fff;
       background-color: #b2d231;
+      text-decoration: none;
     }
     .button:hover:before{
       border-left-color: #b2d231;
@@ -1137,6 +1176,10 @@
       color: #fff;
     }
 
+    .navigation a:hover{
+      text-decoration: none;
+    }
+
     .navigation>li:first-child>a{
       border-radius: 3px 0 0 3px;
     }
@@ -1322,6 +1365,10 @@
       background-color: #595e66;
     }
 
+    .additional_menu a:hover{
+      text-decoration: none;
+    }
+
     
 
   /* --------------------------------------------
@@ -1419,6 +1466,10 @@
     padding: 0 10px;
   }
 
+  .post_slider:not(:last-child){
+    margin-bottom: 20px;
+  }
+
   .post_slider img{
     width: 100%;
     margin-bottom: 10px;
@@ -1472,43 +1523,6 @@
 
 ------------------------------------------------ */
   
-  .post_filter{
-    margin-bottom: 30px;
-  }
-
-  .post_filter_list li{
-    float: left;
-  }
-
-  .post_filter_list li a{
-    display: block;
-    font: 18px/20px 'pf_dindisplay_proregular';
-    padding: 20px;
-    border-radius: 5px;
-    border-right: 1px solid #e0e0e0;
-    position: relative;
-  }
-
-  .post_filter_list li.current a{
-    background-color: #f1f1f1;
-    border-left: 1px solid #e0e0e0;
-    color: #43474d;
-    margin: 0 -2px;
-    z-index: 9;
-  }
-
-  .post_filter_list li.current:first-child a{
-    margin: 0 -2px 0 -1px;
-  }
-
-  .post_filter time{
-    display: block;
-    float: right;
-    font: 14px/20px 'pf_dindisplay_promedium';
-    color: #5c5d5e;
-    padding: 20px 20px 20px 0;
-  }
-
 
   .post_block:not(:last-child){
     margin-bottom: 30px;
@@ -1561,17 +1575,17 @@
   .post_img{display: block;}
 
   .post_img img{
-    max-width: 100%;
+    width: 100%;
     border-radius: 5px 5px 0 0;
   }
 
-  .post .post_desctiption{
+  .post_desctiption{
     display: block;
     padding: 25px 20px 30px;
     position: relative;
   }
 
-  .post .post_desctiption:before{
+  .post_desctiption:before{
     content: "";
     display: block;
     position: absolute;
@@ -1632,6 +1646,10 @@
     margin-left: 3px;
   }
 
+  .post_lan.active>a i{
+    color: #9bb82a;
+  }
+
 
   .post_lan>ul{
     background-color: #fff;
@@ -1665,7 +1683,156 @@
 
 
   /* ------------------------------------------------
-      9.1. Post Small
+      9.1. Post Type1
+  ------------------------------------------------ */
+    
+    .post_block1:not(:last-child){
+      margin-bottom: 25px;
+    }
+
+    .post1 .post_info{
+      border-top: 1px solid #e0e0e0;
+      font-size: 14px;
+    }
+
+    .time_type2{
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      font: 15px/24px 'pf_dindisplay_proregular';
+      color: #fff;
+      padding: 20px 10px;
+      background-color: #b2d231;
+      border-radius: 5px 0 0 0;
+    }
+
+    .post1 .post_excerpt{
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    .post1 .button{
+      width: 100%;
+      text-align: center;
+    }
+
+    .post1 .button:before{
+      display: none;
+    }
+
+
+  /* ------------------------------------------------
+      9.2. Post Type2
+  ------------------------------------------------ */
+    
+    .post_block2:not(:last-child){
+      margin-bottom: 30px;
+    }
+
+    .post2{
+      position: relative;
+      background-color: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 5px;
+    }
+
+    .post2:not(:last-child){
+      margin-bottom: 20px;
+    }
+
+    .post2 .time_type2{
+      padding: 10px;
+    }
+
+    .post2 .post_img{
+      float: left;
+      width: 295px;
+    }
+
+    .post2 .post_img img{
+      border-radius: 5px 0 0 5px;
+    }
+
+    .post2 .post_desctiption:before{
+      display: none;
+    }
+
+    .post2 .post_desctiption{
+      float: right;
+      width: 526px;
+      border: none;
+      background: none;
+      padding: 15px 22px 0 0;
+    }
+
+    .post2 .post_info {
+        border-top: 1px solid #e0e0e0;
+        font-size: 14px;
+    }
+
+    .post2 .post_excerpt {
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+
+  /* ------------------------------------------------
+      9.3. Post Filter
+  ------------------------------------------------ */
+    
+    .post_filter{
+      margin-bottom: 30px;
+    }
+
+    .post_filter_list li{
+      float: left;
+    }
+
+    .post_filter_list li a{
+      display: block;
+      font: 18px/20px 'pf_dindisplay_proregular';
+      padding: 20px;
+      border-radius: 5px;
+      border-right: 1px solid #e0e0e0;
+      position: relative;
+    }
+
+    .post_filter_list li.current a{
+      background-color: #f1f1f1;
+      border-left: 1px solid #e0e0e0;
+      color: #43474d;
+      margin: 0 -5px;
+      z-index: 9;
+    }
+
+    .post_filter_list li.current:first-child a{
+      margin: 0 -2px 0 -1px;
+    }
+
+    .post_filter time{
+      display: block;
+      float: right;
+      font: 14px/20px 'pf_dindisplay_promedium';
+      color: #5c5d5e;
+      padding: 20px 20px 20px 0;
+    }
+
+    .post_filter_list.alignright li:last-child a{
+      border: none;
+    }
+
+    .post_filter_list.alignright li:first-child a{
+      border-left: 1px solid #e0e0e0;
+    }
+
+    .post_filter_list li.current:last-child a{
+      margin: 0 0px 0 -5px;
+    }
+
+
+  /* ------------------------------------------------
+      9.4. Post Small
   ------------------------------------------------ */
     
     .post_small:not(:last-child){
@@ -1734,11 +1901,11 @@
   
 
   /* ------------------------------------------------
-      9.2. Post Nav
+      9.5. Post Nav
   ------------------------------------------------ */
     
     .post_nav:not(:last-child){
-      margin-bottom: 30px;1111111111111111111111111111111
+      margin-bottom: 30px;
     }
 
     .back_home{
@@ -1755,6 +1922,7 @@
     .back_home:hover{
       background-color: #ebebeb;
       color: #43474d;
+      text-decoration: none;
     }
 
     .prev_post,
@@ -1798,6 +1966,7 @@
     .next_post:hover{
       background-color: #b2d231;
       color: #fff;
+      text-decoration: none;
     }
 
     .prev_post:hover:before{
@@ -1901,6 +2070,7 @@
   .reply_btn:hover{
     color: #fff;
     background-color: #919191;
+    text-decoration: none;
   }
 
 
