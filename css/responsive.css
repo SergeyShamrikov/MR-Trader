@@ -319,6 +319,11 @@
 		margin: 10px 0 0;
 	}
 
+	.author_block .social_list1.social_line{
+		margin: 0;
+		margin-left: 10px;
+	}
+
 	.social_list1.social_line li{
 		float: none;
 		display: inline-block;
@@ -503,11 +508,15 @@
 		padding-top: 10px;
 	}
 
-	.comment_autor{
+	.autor_box{
 		display: table;
 	}
 
-	.comment_autor>*{
+	.author_block .autor_box{
+		max-width: 80%;
+	}
+
+	.autor_box>*{
 		display: table-cell;
 		vertical-align: middle;
 	}
@@ -520,6 +529,50 @@
 
 	.comment_level2{
 		margin-left: 30px;
+	}
+
+	.author_block .author_img{
+		width: 70px;
+		height: 70px;
+		float: none;
+		margin: 0;
+	}
+
+	.author_block .author_img:after{
+		border: 7px solid transparent;
+		border-left-color: #f1f1f1;
+		margin-top: -7px;
+	}
+
+	.author_block .author_img img{
+		width: 50px;
+		height: 50px;
+		margin-top: -25px;
+		margin-left: -25px;
+	}
+
+	.author_title{
+		font-size: 20px;
+		margin-bottom: 0;
+		padding-left: 10px;
+	}
+
+	.author_block{
+		padding: 15px 15px 30px;
+	}
+
+	.author_excerpt{
+		padding-top: 15px;
+	}
+
+	.autor_social{
+		border-top: 1px solid #e0e0e0;
+		padding-top: 15px;
+		text-align: center;
+	}
+	.autor_social_title{
+		display: block;
+		margin-bottom: 10px;
 	}
 
 
